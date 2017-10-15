@@ -13,9 +13,6 @@ in {
     ./local-configuration.nix
     ];
 
-  # Ensure encrypted devices are decrypted
-  boot.initrd.luks.devices.adho.device = "/dev/disk/by-uuid/722006b0-9654-4ea1-8703-e0cf9ac1905e";
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
