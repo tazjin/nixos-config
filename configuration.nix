@@ -69,7 +69,7 @@ in {
     shell = pkgs.fish;
     packages = with pkgs; [
       jetbrains.idea-community pavucontrol spotify xclip tdesktop
-      rofi rofi-pass alacritty i3lock unstable.firefox-beta-bin
+      rofi rofi-pass alacritty i3lock unstable.firefox-beta-bin fd
     ];
   };
 
@@ -88,7 +88,8 @@ in {
     description = "Randomly set wallpaper via feh";
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.feh}/bin/feh --recursive --randomize --bg-fill %h/wallpapers";
+      WorkingDirectory = "%h/wallpapers";
+      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.fd}/bin/fd -atf | shuf | head -n1 | ${pkgs.findutils}/bin/xargs ${pkgs.feh}/bin/feh --bg-fill'";
     };
   };
 
