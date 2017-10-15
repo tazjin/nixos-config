@@ -81,7 +81,7 @@ in {
   systemd.user.services.clone-wallpapers = {
     description = "Clone wallpaper repository";
     enable = true;
-    before = [ "feh-wp.service" "feh-wp.timer" ]
+    before = [ "feh-wp.service" "feh-wp.timer" ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.fish}/bin/fish -c '${pkgs.coreutils}/bin/stat %h/wallpapers; or ${pkgs.git}/bin/git clone https://git.tazj.in/tazjin/wallpapers.git %h/wallpapers'";
