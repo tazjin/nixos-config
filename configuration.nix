@@ -18,7 +18,6 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
 
   hardware.pulseaudio.enable = true;
-  programs.light.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Oslo";

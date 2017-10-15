@@ -6,4 +6,5 @@
   networking.hostName = "adho";
   networking.connman.enable = true;
   services.xserver.libinput.enable = true;
+  programs.light.enable = true;
 }
