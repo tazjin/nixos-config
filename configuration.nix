@@ -20,8 +20,6 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use connman for network configuration
-  networking.connman.enable = true;
   hardware.pulseaudio.enable = true;
   programs.light.enable = true;
 
