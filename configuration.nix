@@ -26,7 +26,7 @@ in {
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     curl gnumake unzip openjdk gcc htop tree direnv tmux fish ripgrep
-    gnupg pass git
+    gnupg pass git manpages stdmanpages
   ];
 
   # Enable the X11 windowing system.
