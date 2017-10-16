@@ -4,19 +4,14 @@
 
 { config, pkgs, ... }:
 
-let rust-overlay = import nixpkgs-mozilla/rust-overlay.nix;
-    unstable = import <nixos-unstable> { config.allowUnfree = true; };
-    nixfd = import pkgs/nixfd.nix;
-in {
+{
   imports =
-    [ # Include the results of the hardware scan.
+    [
     ./hardware-configuration.nix
     ./local-configuration.nix
+    ./packages.nix
+    ./wallpapers.nix
     ];
-
-  # Configure the Nix package manager
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ rust-overlay ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -26,14 +21,6 @@ in {
 
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    curl gnumake unzip openjdk gcc htop tree direnv tmux fish ripgrep
-    gnupg pass git manpages stdmanpages latest.rustChannels.stable.rust
-    nixfd
-  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -65,7 +52,7 @@ in {
       input-fonts
     ];
   };
-  
+
   # Configure user account
   users.defaultUserShell = pkgs.fish;
   users.extraUsers.vincent = {
@@ -73,42 +60,6 @@ in {
     isNormalUser = true;
     uid = 1000;
     shell = pkgs.fish;
-    packages = with pkgs; [
-      jetbrains.idea-community pavucontrol spotify xclip tdesktop
-      rofi rofi-pass alacritty i3lock unstable.firefox-beta-bin fd
-      tig kubernetes xfce.xfce4-screenshooter exa lxappearance-gtk3
-      numix-gtk-theme numix-icon-theme unstable.numix-cursor-theme
-    ];
-  };
-
-  # Configure random setting of wallpapers
-  systemd.user.services.clone-wallpapers = {
-    description = "Clone wallpaper repository";
-    enable = true;
-    before = [ "feh-wp.service" "feh-wp.timer" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.fish}/bin/fish -c '${pkgs.coreutils}/bin/stat %h/wallpapers; or ${pkgs.git}/bin/git clone https://git.tazj.in/tazjin/wallpapers.git %h/wallpapers'";
-    };
-  };
-
-  systemd.user.services.feh-wp = {
-    description = "Randomly set wallpaper via feh";
-    serviceConfig = {
-      Type = "oneshot";
-      WorkingDirectory = "%h/wallpapers";
-      ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.fd}/bin/fd -atf | shuf | head -n1 | ${pkgs.findutils}/bin/xargs ${pkgs.feh}/bin/feh --bg-fill'";
-    };
-  };
-
-  systemd.user.timers.feh-wp = {
-    description = "Set a random wallpaper every hour";
-    wantedBy = [ "timers.target" ];
-
-    timerConfig = {
-      OnActiveSec = "3second";
-      OnUnitActiveSec = "1hour";
-    };
   };
 
   security.sudo.enable = true;
