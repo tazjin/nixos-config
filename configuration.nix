@@ -6,6 +6,7 @@
 
 let rust-overlay = import nixpkgs-mozilla/rust-overlay.nix;
     unstable = import <nixos-unstable> { config.allowUnfree = true; };
+    nixfd = import pkgs/nixfd.nix;
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -31,6 +32,7 @@ in {
   environment.systemPackages = with pkgs; [
     curl gnumake unzip openjdk gcc htop tree direnv tmux fish ripgrep
     gnupg pass git manpages stdmanpages latest.rustChannels.stable.rust
+    nixfd
   ];
 
   # Enable the X11 windowing system.
