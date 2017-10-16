@@ -4,14 +4,18 @@
 
 { config, pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> { config.allowUnfree = true; };
+let rust-overlay = import "/etc/nixos/nixpkgs-mozilla/rust-overlay.nix";
+    unstable = import <nixos-unstable> { config.allowUnfree = true; };
 in {
   imports =
     [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./local-configuration.nix
     ];
+
+  # Configure the Nix package manager
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [ rust-overlay ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -26,7 +30,7 @@ in {
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     curl gnumake unzip openjdk gcc htop tree direnv tmux fish ripgrep
-    gnupg pass git manpages stdmanpages
+    gnupg pass git manpages stdmanpages latest.rustChannels.stable.rust
   ];
 
   # Enable the X11 windowing system.
@@ -52,7 +56,6 @@ in {
 
   # Configure other random applications:
   programs.java.enable = true;
-  nixpkgs.config.allowUnfree = true;
 
   # Configure fonts
   fonts = {
