@@ -71,7 +71,8 @@ in {
     packages = with pkgs; [
       jetbrains.idea-community pavucontrol spotify xclip tdesktop
       rofi rofi-pass alacritty i3lock unstable.firefox-beta-bin fd
-      tig kubernetes xfce.xfce4-screenshooter unstable.exa
+      tig kubernetes xfce.xfce4-screenshooter exa lxappearance-gtk3
+      numix-gtk-theme numix-icon-theme unstable.numix-cursor-theme
     ];
   };
 
