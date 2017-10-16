@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./local-configuration.nix
     ./packages.nix
-    ./wallpapers.nix
+    ./desktop.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -22,21 +22,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us,no";
-  services.xserver.xkbOptions = "caps:super, grp:shifts_toggle";
-
-  # Configure i3 & compositor
-  services.xserver.windowManager.i3.enable = true;
-  services.compton.enable = true;
-  services.compton.backend = "xrender";
-
-  # Configure Redshift for Oslo
-  services.redshift.enable = true;
-  services.redshift.latitude = "59.911491";
-  services.redshift.longitude = "10.757933";
-
   # Configure shell environment
   programs.fish.enable = true;
   programs.ssh.startAgent = true;
@@ -45,13 +30,6 @@
 
   # Configure other random applications:
   programs.java.enable = true;
-
-  # Configure fonts
-  fonts = {
-    fonts = with pkgs; [
-      input-fonts
-    ];
-  };
 
   # Configure user account
   users.defaultUserShell = pkgs.fish;
