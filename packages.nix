@@ -24,6 +24,7 @@ in {
     git
     gnumake
     gnupg
+    google-cloud-sdk
     htop
     i3lock
     jetbrains.idea-community
