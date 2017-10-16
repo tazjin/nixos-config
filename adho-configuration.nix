@@ -6,5 +6,6 @@
   networking.hostName = "adho";
   networking.connman.enable = true;
   services.xserver.libinput.enable = true;
+  services.xserver.videoDrivers = [ "intel" ];
   programs.light.enable = true;
 }
