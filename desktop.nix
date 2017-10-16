@@ -41,7 +41,8 @@ in {
 
   systemd.user.timers.feh-wp = {
     description = "Set a random wallpaper every hour";
-    wantedBy = [ "timers.target" ];
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
 
     timerConfig = {
       OnActiveSec = "3second";
