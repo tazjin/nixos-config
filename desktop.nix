@@ -45,7 +45,7 @@ in {
     partOf = [ "graphical-session.target" ];
 
     timerConfig = {
-      OnActiveSec = "3second";
+      OnActiveSec = "1second";
       OnUnitActiveSec = "1hour";
     };
   };
