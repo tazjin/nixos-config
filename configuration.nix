@@ -37,6 +37,7 @@ in {
   # Configure i3 & compositor
   services.xserver.windowManager.i3.enable = true;
   services.compton.enable = true;
+  services.compton.backend = "xrender";
 
   # Configure Redshift for Oslo
   services.redshift.enable = true;
