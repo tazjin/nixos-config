@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 
-let rust-overlay = import "/etc/nixos/nixpkgs-mozilla/rust-overlay.nix";
+let rust-overlay = import nixpkgs-mozilla/rust-overlay.nix;
     unstable = import <nixos-unstable> { config.allowUnfree = true; };
 in {
   imports =
