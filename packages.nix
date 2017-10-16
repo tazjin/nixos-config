@@ -57,6 +57,7 @@ in {
     latest.rustChannels.stable.rust
 
     # Custom packages:
+    (import pkgs/kontemplate.nix)
     (import pkgs/nixfd.nix)
   ];
 }
