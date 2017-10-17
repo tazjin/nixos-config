@@ -16,17 +16,22 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   hardware.pulseaudio.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Europe/Oslo";
 
-  # Configure shell environment
+  # Configure shell environment:
   programs.fish.enable = true;
   programs.ssh.startAgent = true;
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
+
+  # Configure VirtualBox (needed for local NixOps testing):
+  virtualisation.virtualbox.host.enable = true;
+
+  # Configure Docker (with socket activation):
+  # Side note: ... virtualisation? ...
+  virtualisation.docker.enable = true;
+  virtualisation.docker.autoPrune.enable = true;
 
   # Configure other random applications:
   programs.java.enable = true;
