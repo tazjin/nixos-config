@@ -39,7 +39,7 @@
   # Configure user account
   users.defaultUserShell = pkgs.fish;
   users.extraUsers.vincent = {
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     isNormalUser = true;
     uid = 1000;
     shell = pkgs.fish;
