@@ -31,6 +31,7 @@ in {
     kubernetes
     lxappearance-gtk3
     manpages
+    nixops
     numix-gtk-theme
     numix-icon-theme
     openjdk
