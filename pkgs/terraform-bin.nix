@@ -23,6 +23,4 @@ stdenv.mkDerivation rec {
     homepage = "https://www.terraform.io/";
     license  = licenses.mpl20;
   };
-
-  #
 }

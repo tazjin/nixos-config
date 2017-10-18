@@ -36,6 +36,7 @@ in {
     numix-gtk-theme
     numix-icon-theme
     openjdk
+    openssl
     pass
     pavucontrol
     ripgrep
