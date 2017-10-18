@@ -31,6 +31,7 @@ in {
     kubernetes
     lxappearance-gtk3
     manpages
+    maven
     nixops
     numix-gtk-theme
     numix-icon-theme
@@ -60,6 +61,7 @@ in {
     # Custom packages:
     (import pkgs/kontemplate.nix)
     (import pkgs/nixfd.nix)
+    (import pkgs/terraform-bin.nix)
   ];
 }
 
