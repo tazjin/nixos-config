@@ -28,6 +28,7 @@ in {
     htop
     i3lock
     jetbrains.idea-community
+    jq
     kubernetes
     lxappearance-gtk3
     manpages
