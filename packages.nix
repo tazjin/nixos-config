@@ -27,7 +27,7 @@ in {
     google-cloud-sdk
     htop
     i3lock
-    jetbrains.idea-community
+    jetbrains.idea-ultimate
     jq
     kubernetes
     lxappearance-gtk3
