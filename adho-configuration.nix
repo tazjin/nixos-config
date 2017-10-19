@@ -26,4 +26,6 @@
       psk = "speakeasy";
     };
   };
+
+  hardware.bluetooth.enable = true;
 }
