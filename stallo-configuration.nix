@@ -1,4 +1,3 @@
-
 # Local configuration for 'stallo' (Home desktop PC)
 { config, ...}:
 
