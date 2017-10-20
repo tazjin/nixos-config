@@ -32,7 +32,11 @@ in {
   # Configure fonts
   fonts = {
     fonts = with pkgs; [
+      font-awesome-ttf
       input-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      powerline-fonts
     ];
   };
 
