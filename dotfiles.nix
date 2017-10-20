@@ -22,7 +22,7 @@ in {
   environment.etc = {
     "i3/config".source = "${dotfiles}/i3.conf";
     "tmux.conf".source = "${dotfiles}/tmux.conf";
-    "fish/foreign-env/tazjin".source = "${dotfiles}/config.fish";
+    "fish/config.fish".source = "${dotfiles}/config.fish";
     "rofi.conf".source = "${dotfiles}/rofi.conf";
     "alacritty.yml".source = "${dotfiles}/alacritty.yml";
   };
