@@ -63,6 +63,7 @@ in {
 
     # Custom packages:
     (import pkgs/kontemplate.nix)
+    (import pkgs/mq-cli.nix)
     (import pkgs/nixfd.nix)
     (import pkgs/terraform-bin.nix)
   ];
