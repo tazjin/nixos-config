@@ -23,5 +23,6 @@ in {
     "i3/config".source = "${dotfiles}/i3.conf";
     "tmux.conf".source = "${dotfiles}/tmux.conf";
     "fish/foreign-env/tazjin".source = "${dotfiles}/config.fish";
+    "rofi.conf".source = "${dotfiles}/rofi.conf";
   };
 }
