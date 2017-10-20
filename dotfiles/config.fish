@@ -21,3 +21,6 @@ alias gf 'git fetch'
 alias gap 'git add -p'
 alias pbcopy 'xclip -selection clipboard'
 alias edit 'emacsclient -n'
+
+# Old habits die hard (also ls is just easier to type):
+alias ls 'exa'
