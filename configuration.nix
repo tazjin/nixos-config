@@ -20,22 +20,27 @@
   hardware.pulseaudio.enable = true;
   time.timeZone = "Europe/Oslo";
 
-  # Configure shell environment:
-  programs.fish.enable = true;
-  programs.ssh.startAgent = true;
+  # Configure emacs:
+  # (actually, that's a lie, this only installs emacs!)
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
 
-  # Configure VirtualBox (needed for local NixOps testing):
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation = {
+    # Configure VirtualBox (needed for local NixOps testing):
+    virtualbox.host.enable = true;
 
-  # Configure Docker (with socket activation):
-  # Side note: ... virtualisation? ...
-  virtualisation.docker.enable = true;
-  virtualisation.docker.autoPrune.enable = true;
+    # Configure Docker (with socket activation):
+    # Side note: ... why is this in virtualisation? ...
+    docker.enable = true;
+    docker.autoPrune.enable = true;
+  };
 
-  # Configure other random applications:
-  programs.java.enable = true;
+  # Configure various other applications:
+  programs = {
+    java.enable = true;
+    fish.enable = true;
+    ssh.startAgent = true;
+  };
 
   # Configure user account
   users.defaultUserShell = pkgs.fish;
@@ -46,8 +51,10 @@
     shell = pkgs.fish;
   };
 
-  security.sudo.enable = true;
-  security.sudo.extraConfig = "wheel ALL=(ALL:ALL) SETENV: ALL";
+  security.sudo = {
+    enable = true;
+    extraConfig = "wheel ALL=(ALL:ALL) SETENV: ALL";
+  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database

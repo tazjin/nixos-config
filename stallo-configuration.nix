@@ -7,12 +7,14 @@
   # Use proprietary nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  networking.hostName = "stallo";
-  networking.wireless.enable = true;
-  networking.wireless.networks = {
-    "How do I computer?" = {
-      # Welcome to roast club!
-      psk = "washyourface";
+  networking = {
+    hostName = "stallo";
+    wireless.enable = true;
+    wireless.networks = {
+      "How do I computer?" = {
+        # Welcome to roast club!
+        psk = "washyourface";
+      };
     };
   };
 }

@@ -20,10 +20,10 @@ in {
   # /etc/ is a special place in NixOS!
   # Symlinks that need to be created there must be specified explicitly.
   environment.etc = {
-    "i3/config".source = "${dotfiles}/i3.conf";
-    "tmux.conf".source = "${dotfiles}/tmux.conf";
+    "alacritty.yml".source    = "${dotfiles}/alacritty.yml";
     "fish/config.fish".source = "${dotfiles}/config.fish";
-    "rofi.conf".source = "${dotfiles}/rofi.conf";
-    "alacritty.yml".source = "${dotfiles}/alacritty.yml";
+    "i3/config".source        = "${dotfiles}/i3.conf";
+    "rofi.conf".source        = "${dotfiles}/rofi.conf";
+    "tmux.conf".source        = "${dotfiles}/tmux.conf";
   };
 }
