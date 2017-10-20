@@ -24,5 +24,6 @@ in {
     "tmux.conf".source = "${dotfiles}/tmux.conf";
     "fish/foreign-env/tazjin".source = "${dotfiles}/config.fish";
     "rofi.conf".source = "${dotfiles}/rofi.conf";
+    "alacritty.yml".source = "${dotfiles}/alacritty.yml";
   };
 }
