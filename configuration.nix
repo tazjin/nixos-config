@@ -11,6 +11,7 @@
     ./local-configuration.nix
     ./packages.nix
     ./desktop.nix
+    ./dotfiles.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

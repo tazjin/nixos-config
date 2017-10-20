@@ -10,7 +10,11 @@ in {
   services.xserver.xkbOptions = "caps:super, grp:shifts_toggle";
 
   # configure desktop environment:
-  services.xserver.windowManager.i3.enable = true;
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    configFile = "/etc/i3/config";
+  };
+
   services.compton.enable = true;
   services.compton.backend = "xrender"; # this should be the default!
 
