@@ -12,20 +12,16 @@ let dotfiles = pkgs.stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    mkdir -p $out/dotfiles
-    cp ./* $out/dotfiles/
+    mkdir -p $out
+    cp ./* $out/
   '';
 };
 in {
   # /etc/ is a special place in NixOS!
   # Symlinks that need to be created there must be specified explicitly.
   environment.etc = {
-    "i3/config" = {
-      source = "${dotfiles}/dotfiles/i3.conf";
-      # Setting a mode causes Nix to copy the file instead of symlinking it.
-      # For i3 config in particular this is desirable because I want to be able
-      # to modify and reload it before committing a change.
-      mode = "0644";
-    };
+    "i3/config".source = "${dotfiles}/i3.conf";
+    "tmux.conf".source = "${dotfiles}/tmux.conf";
+    "fish/foreign-env/tazjin".source = "${dotfiles}/config.fish";
   };
 }
