@@ -1,10 +1,6 @@
 # Configure classic prompt
 set fish_color_user --bold blue
 set fish_color_cwd --bold white
-#set __fish_git_prompt_color green
-set __fish_git_prompt_showcolorhints yes
-set __fish_git_prompt_color_prefix purple
-set __fish_git_prompt_color_suffix purple
 
 # Fish configuration
 set fish_greeting ""
