@@ -2,6 +2,11 @@
 set fish_color_user --bold blue
 set fish_color_cwd --bold white
 
+# Enable colour hints in VCS prompt:
+set __fish_git_prompt_showcolorhints yes
+set __fish_git_prompt_color_prefix purple
+set __fish_git_prompt_color_suffix purple
+
 # Fish configuration
 set fish_greeting ""
 set PATH $HOME/.local/bin $GOPATH/bin $PATH
