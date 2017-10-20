@@ -27,6 +27,7 @@ in {
     google-cloud-sdk
     htop
     i3lock
+    iftop
     jetbrains.idea-ultimate
     jq
     kubernetes
