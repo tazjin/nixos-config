@@ -26,6 +26,11 @@
       "Abelone" = {
         psk = "speakeasy";
       };
+
+      # Eugene's apartment:
+      "GET_5G_4FD250" = {
+        psk = "62636342";
+      };
     };
   };
 
