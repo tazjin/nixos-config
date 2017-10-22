@@ -9,7 +9,7 @@ set __fish_git_prompt_color_suffix purple
 
 # Fish configuration
 set fish_greeting ""
-set PATH $HOME/.local/bin $GOPATH/bin $PATH
+set PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
 
 # Editor configuration
 set -gx EDITOR "emacsclient"
