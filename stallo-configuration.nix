@@ -17,4 +17,7 @@
       };
     };
   };
+
+  # Enable PostgreSQL for development
+  services.postgresql.enable = true;
 }
