@@ -66,6 +66,7 @@ in {
     (import pkgs/mq-cli.nix)
     (import pkgs/nixfd.nix)
     (import pkgs/terraform-bin.nix)
+    (import pkgs/pulseaudio-ctl.nix)
   ];
 }
 
