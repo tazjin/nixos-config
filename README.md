@@ -1,16 +1,15 @@
 NixOS configuration
 ===================
 
-Set up the unstable channel first:
+My NixOS config. Some manual steps required before the first run!
+
+Make sure submodules are cloned: `git submodule update --init`.
+
+Set up the unstable NixOS channel:
 
 ```
 nix-channel --add http://nixos.org/channels/nixos-unstable nixos-unstable
 nix-channel --update
 ```
 
-## TODO
-
-* [ ] place i3 (and related) configuration automatically
-* [ ] place [emacs configuration](https://github.com/tazjin/emacs.d) automatically
-* [ ] configure channel automatically (if possible)
-* [ ] configure Rust setup
+Symlink local machine configuration to `/etc/nixos/local-configuration.nix`.
