@@ -17,6 +17,7 @@ in {
     alacritty
     curl
     direnv
+    dnsutils
     exa
     fd
     fish
