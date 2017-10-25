@@ -10,6 +10,8 @@
   networking = {
     hostName = "adho";
     wireless.enable = true;
+    wireless.userControlled.enable = true;
+
     wireless.networks = {
       # Welcome to roast club!
       "How do I computer?" = {
@@ -20,6 +22,13 @@
       # http://bit.ly/2gI43QP
       "Amesto-mobile" = {
         psk = "ostemAt1";
+      };
+
+      # On the go!
+      "Rumpetroll" = {
+        psk = "fisk1234";
+        # If this network exists, chances are that I want it:
+        priority = 10;
       };
 
       # Public places in Oslo:
