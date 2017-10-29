@@ -19,7 +19,7 @@
 
     wireless.networks = {
       # Welcome to roast club!
-      "How do I computer?" = {
+      "How do I computer fast?" = {
         psk = "washyourface";
       };
 
