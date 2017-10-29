@@ -23,6 +23,7 @@ in {
     fish
     gcc
     git
+    gnome3.evolution
     gnumake
     gnupg
     google-cloud-sdk

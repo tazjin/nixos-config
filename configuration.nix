@@ -25,6 +25,9 @@
   services.emacs.enable = true;
   services.emacs.defaultEditor = true;
 
+  # Enable GNOME keyring (required for Evolution)
+  services.gnome3.gnome-keyring.enable = true;
+
   virtualisation = {
     # Configure VirtualBox (needed for local NixOps testing):
     virtualbox.host.enable = true;
