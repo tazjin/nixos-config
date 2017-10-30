@@ -23,7 +23,9 @@ in {
     fish
     gcc
     git
+    gnome3.dconf
     gnome3.evolution
+    gnome3.glib_networking
     gnumake
     gnupg
     google-cloud-sdk
@@ -43,6 +45,7 @@ in {
     openssl
     pass
     pavucontrol
+    pkgconfig
     ripgrep
     rofi
     rofi-pass
