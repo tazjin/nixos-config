@@ -20,6 +20,10 @@
   hardware.pulseaudio.enable = true;
   time.timeZone = "Europe/Oslo";
 
+  # Configure audio setup for JACK + Overtone
+  boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+
   # Configure emacs:
   # (actually, that's a lie, this only installs emacs!)
   services.emacs.enable = true;

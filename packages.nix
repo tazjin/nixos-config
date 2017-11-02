@@ -46,6 +46,7 @@ in {
     pass
     pavucontrol
     pkgconfig
+    qjackctl
     ripgrep
     rofi
     rofi-pass
