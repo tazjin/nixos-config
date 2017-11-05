@@ -2,11 +2,11 @@
 with import <nixpkgs> {};
 
 stdenv.mkDerivation {
-  name = "kontemplate-1.2.0";
+  name = "kontemplate-1.3.0";
 
   src = fetchzip {
-    url = "https://github.com/tazjin/kontemplate/releases/download/v1.2.0/kontemplate-1.2.0-f8b6ad6-linux-amd64.tar.gz";
-    sha256 = "09siirhr1m9lc91bkw4h4l1qpnjnl03yr5m9mjfxdkp5gzmkcb9r";
+    url = "https://github.com/tazjin/kontemplate/releases/download/v1.3.0/kontemplate-1.3.0-98daa6b-linux-amd64.tar.gz";
+    sha256 = "0byybdc1xli96rxyg3wf7548b055ca355qavi435riwlkmn9c5da";
   };
 
   installPhase = ''
