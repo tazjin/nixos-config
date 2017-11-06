@@ -51,6 +51,7 @@ in {
     ripgrep
     rofi
     rofi-pass
+    rustracer
     spotify
     stdmanpages
     tdesktop
