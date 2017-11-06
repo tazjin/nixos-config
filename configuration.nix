@@ -33,9 +33,6 @@
   services.gnome3.gnome-keyring.enable = true;
 
   virtualisation = {
-    # Configure VirtualBox (needed for local NixOps testing):
-    virtualbox.host.enable = true;
-
     # Configure Docker (with socket activation):
     # Side note: ... why is this in virtualisation? ...
     docker.enable = true;
