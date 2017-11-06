@@ -43,6 +43,7 @@ in {
     numix-icon-theme
     openjdk
     openssl
+    openssl.dev
     pass
     pavucontrol
     pkgconfig
