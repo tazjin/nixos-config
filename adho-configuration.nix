@@ -45,6 +45,14 @@
       "GET_5G_4FD250" = {
         psk = "62636342";
       };
+
+      # FSCONS 2017
+      "uioguest" = {};
+
+      # Hackeriet!
+      "hackeriet.no" = {
+        psk = "hackeriet.no";
+      };
     };
   };
 
