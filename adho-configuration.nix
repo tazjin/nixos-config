@@ -53,6 +53,11 @@
       "hackeriet.no" = {
         psk = "hackeriet.no";
       };
+
+      # Cafe Sara
+      "Sara Nett" = {
+        psk = "sarabar1989";
+      };
     };
   };
 
