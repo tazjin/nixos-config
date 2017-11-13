@@ -18,13 +18,13 @@ in rustPlatform.buildRustPackage rec {
   version = "0.1.0";
 
   rustRegistry = newRegistry;
-  depsSha256 = "1mdh5adnf58qn0gm2l9bp9dar2h577wvnhnlq8wj8a54vmgpp3ic";
+  depsSha256 = "138a4dgwhf78bnmxz2ibxqz1wifq5046czxd0w8a4gwngy2ryiqs";
 
   src = fetchFromGitHub {
     owner  = "aprilabank";
     repo   = "mq-cli";
-    rev    = "2c71e092f69f5cd3c31ad8a84aa4168118579898";
-    sha256 = "10m11fis5dv3v9y5rg48nbg7170bzakdban5mrjaj2vkv9qgslii";
+    rev    = "d908fe1cbc7de0bff7cadbe0b3851d50229b7de2";
+    sha256 = "0c4myav65dzks53q4grin9lhcz1jzpddqnihf2h9lm098dhrswkp";
   };
 
   meta = with stdenv.lib; {
