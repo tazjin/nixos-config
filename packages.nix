@@ -76,6 +76,7 @@ in {
     (import pkgs/pulseaudio-ctl.nix)
     (import pkgs/stern-bin.nix)
     (import pkgs/terraform-bin.nix)
+    (import pkgs/gopass-bin.nix { inherit pkgs; })
   ];
 }
 
