@@ -26,7 +26,7 @@
 
   # Configure emacs:
   # (actually, that's a lie, this only installs emacs!)
-  services.emacs.enable = true;
+  services.emacs.install = true;
   services.emacs.defaultEditor = true;
 
   # Enable GNOME keyring (required for Evolution)

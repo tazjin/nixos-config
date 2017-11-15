@@ -1,6 +1,6 @@
 # Configuration for the desktop environment
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let wallpapers = import ./pkgs/wallpapers.nix;
 in {
@@ -9,18 +9,19 @@ in {
     enable = true;
     layout = "us,no";
     xkbOptions = "caps:super, grp:shifts_toggle";
+
+    # Give EXWM permission to control the session.
+    displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
   };
 
-  # configure desktop environment:
-  services.xserver.windowManager.i3 = {
-    enable = true;
-    configFile = "/etc/i3/config";
+  # Configure desktop environment:
+  services.xserver.windowManager.session = lib.singleton {
+    name = "exwm";
+    start = ''
+      ${pkgs.emacs}/bin/emacs --daemon -f exwm-enable
+      emacsclient -c
+    '';
   };
-
-  services.compton.enable = true;
-  # this should be the default! in fact, it will soon be:
-  # https://github.com/NixOS/nixpkgs/pull/30486
-  services.compton.backend = "xrender";
 
   # Configure Redshift for Oslo
   services.redshift = {
