@@ -58,6 +58,14 @@
       "Sara Nett" = {
         psk = "sarabar1989";
       };
+
+      # Sync Compund
+      "RWDS" = {
+        psk = "radicalagenda";
+      };
+
+      "espressohouse" = {};
+      "Gotanet Open" = {};
     };
   };
 
