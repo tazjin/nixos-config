@@ -35,6 +35,7 @@ in {
     jetbrains.idea-ultimate
     jq
     kubernetes
+    lispPackages.quicklisp
     lxappearance-gtk3
     manpages
     maven
@@ -52,6 +53,7 @@ in {
     rofi
     rofi-pass
     rustracer
+    sbcl
     spotify
     stdmanpages
     tdesktop
