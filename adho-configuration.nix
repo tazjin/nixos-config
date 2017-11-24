@@ -59,9 +59,13 @@
         psk = "sarabar1989";
       };
 
-      # Sync Compund
+      # Sync Compound
       "RWDS" = {
         psk = "radicalagenda";
+      };
+
+      "BrewDog" = {
+        psk = "welovebeer";
       };
 
       "espressohouse" = {};
