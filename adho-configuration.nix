@@ -7,11 +7,6 @@
   services.xserver.videoDrivers = [ "intel" ];
   programs.light.enable = true;
 
-  # Attempt to get Steam & co to run:
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
-  environment.systemPackages = [ pkgs.steam ];
-
   networking = {
     hostName = "adho";
     wireless.enable = true;
