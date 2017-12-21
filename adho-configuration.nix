@@ -63,8 +63,16 @@
         psk = "welovebeer";
       };
 
+      # Dima's
+      "What's a Bad Idea?" = {
+        psk = "DQDxzrzIvy0YtDwH";
+      };
+
       "espressohouse" = {};
       "Gotanet Open" = {};
+      "wifi.flytoget.no" = {};
+      "AIRPORT" = {};
+      "ilcaffelovesyou" = {};
     };
   };
 
