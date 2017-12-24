@@ -68,6 +68,7 @@
         psk = "DQDxzrzIvy0YtDwH";
       };
 
+      "The Thief" = {};
       "espressohouse" = {};
       "Gotanet Open" = {};
       "wifi.flytoget.no" = {};
