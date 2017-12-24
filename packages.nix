@@ -51,8 +51,6 @@ in {
     pkgconfig
     qjackctl
     ripgrep
-    rofi
-    rofi-pass
     rustracer
     sbcl
     spotify
