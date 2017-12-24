@@ -29,6 +29,7 @@ in {
     gnumake
     gnupg
     google-cloud-sdk
+    firefox-bin
     htop
     i3lock
     iftop
@@ -64,8 +65,7 @@ in {
     xclip
     xfce.xfce4-screenshooter
 
-    # nixos-unstable.* packages:
-    unstable.firefox-beta-bin
+    # Unstable packages:
     unstable.numix-cursor-theme
 
     # Overlay packages:
