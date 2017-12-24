@@ -22,7 +22,6 @@ in {
   environment.etc = {
     "alacritty.yml".source    = "${dotfiles}/alacritty.yml";
     "fish/config.fish".source = "${dotfiles}/config.fish";
-    "i3/config".source        = "${dotfiles}/i3.conf";
     "rofi.conf".source        = "${dotfiles}/rofi.conf";
     "tmux.conf".source        = "${dotfiles}/tmux.conf";
   };
