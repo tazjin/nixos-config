@@ -68,12 +68,15 @@
         psk = "DQDxzrzIvy0YtDwH";
       };
 
+      "Norwegian Internet Access" = {};
+      "NSB_INTERAKTIV" = {};
       "The Thief" = {};
       "espressohouse" = {};
       "Gotanet Open" = {};
       "wifi.flytoget.no" = {};
       "AIRPORT" = {};
       "ilcaffelovesyou" = {};
+      "WIFIonICE" = {};
     };
   };
 
