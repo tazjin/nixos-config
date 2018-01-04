@@ -14,6 +14,11 @@ in {
     displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
   };
 
+
+  # Apparently when you have house guests they complain about your screen tearing!
+  services.compton.enable = true;
+  services.compton.backend = "xrender";
+
   # Configure desktop environment:
   services.xserver.windowManager.session = lib.singleton {
     name = "exwm";
