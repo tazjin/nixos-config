@@ -68,6 +68,10 @@
         psk = "DQDxzrzIvy0YtDwH";
       };
 
+      "SafetyWiFi - Teknologihuset" = {
+        psk = "tech4ever";
+      };
+
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
       "The Thief" = {};
