@@ -8,7 +8,7 @@ in {
   services.xserver = {
     enable = true;
     layout = "us,no";
-    xkbOptions = "caps:super, grp:shifts_toggle";
+    xkbOptions = "caps:super, grp:shifts_toggle, parens:swap_brackets";
 
     # Give EXWM permission to control the session.
     displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
