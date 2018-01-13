@@ -81,6 +81,7 @@
       "AIRPORT" = {};
       "ilcaffelovesyou" = {};
       "WIFIonICE" = {};
+      "Lorry Gjest" = {};
     };
   };
 
