@@ -67,7 +67,7 @@ in {
     unstable.numix-cursor-theme
 
     # Overlay packages:
-    latest.rustChannels.stable.rust
+    (rustChannelOf { date = "2018-01-04"; channel = "stable"; }).rust # Rust 1.23.0
 
     # Custom packages:
     (import pkgs/kontemplate.nix)
