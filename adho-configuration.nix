@@ -82,6 +82,7 @@
       "ilcaffelovesyou" = {};
       "WIFIonICE" = {};
       "Lorry Gjest" = {};
+      "Amundsengjest" = {};
     };
   };
 
