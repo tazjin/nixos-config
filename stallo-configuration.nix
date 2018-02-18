@@ -11,7 +11,7 @@
     hostName = "stallo";
     wireless.enable = true;
     wireless.networks = {
-      "How do I computer?" = {
+      "How do I computer fast?" = {
         # Welcome to roast club!
         psk = "washyourface";
       };
