@@ -72,6 +72,10 @@
         psk = "tech4ever";
       };
 
+      "Selvaag Pluss" = {
+        psk = "detlilleekstra";
+      };
+
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
       "The Thief" = {};
