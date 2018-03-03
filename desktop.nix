@@ -3,6 +3,7 @@
 { config, lib, pkgs, ... }:
 
 let wallpapers = import ./pkgs/wallpapers.nix;
+    emacs = import ./emacs.nix { inherit pkgs; };
 in {
   # Configure basic X-server stuff:
   services.xserver = {
@@ -23,8 +24,8 @@ in {
   services.xserver.windowManager.session = lib.singleton {
     name = "exwm";
     start = ''
-      ${pkgs.emacs}/bin/emacs --daemon -f exwm-enable
-      emacsclient -c
+      ${emacs}/bin/emacs --daemon -f exwm-enable
+      ${emacs}/bin/emacsclient -c
     '';
   };
 
