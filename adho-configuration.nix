@@ -18,12 +18,6 @@
         psk = "washyourface";
       };
 
-      # Did someone say wifi credentials are secret?
-      # http://bit.ly/2gI43QP
-      "Amesto-mobile" = {
-        psk = "ostemAt1";
-      };
-
       # On the go!
       "Rumpetroll" = {
         psk = "fisk1234";
@@ -74,6 +68,10 @@
 
       "Selvaag Pluss" = {
         psk = "detlilleekstra";
+      };
+
+      "Langler" = {
+        psk = "Oslo2018";
       };
 
       "Norwegian Internet Access" = {};
