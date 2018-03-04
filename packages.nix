@@ -8,8 +8,13 @@ let unstable = import <nixos-unstable> { config.allowUnfree = true; };
     rust-overlay = import nixpkgs-mozilla/rust-overlay.nix;
 in {
   # Configure the Nix package manager
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ rust-overlay ];
+  nixpkgs = {
+    overlays = [ rust-overlay ];
+    config.allowUnfree = true;
+    config.packageOverrides = oldPkgs: oldPkgs // {
+      wallpapers = import ./pkgs/wallpapers.nix;
+    };
+  };
 
   # ... and declare packages to be installed.
   environment.systemPackages = with pkgs; [

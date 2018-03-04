@@ -2,8 +2,7 @@
 
 { config, lib, pkgs, ... }:
 
-let wallpapers = import ./pkgs/wallpapers.nix;
-    emacs = import ./emacs.nix { inherit pkgs; };
+let emacs = import ./emacs.nix { inherit pkgs; };
 in {
   # Configure basic X-server stuff:
   services.xserver = {
@@ -52,7 +51,7 @@ in {
     description = "Randomly set wallpaper via feh";
     serviceConfig = {
       Type             = "oneshot";
-      WorkingDirectory = "${wallpapers}/share/wallpapers";
+      WorkingDirectory = "${pkgs.wallpapers}/share/wallpapers";
 
       # Manually shuffle because feh's --randomize option can't be restricted to
       # just certain file types.
