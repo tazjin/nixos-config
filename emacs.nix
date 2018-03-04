@@ -70,6 +70,7 @@ in emacsWithPackages(epkgs:
     helm
     ht
     idle-highlight-mode
+    intero
     magit
     markdown-mode-plus
     multi-term

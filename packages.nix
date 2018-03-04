@@ -63,6 +63,16 @@ in {
     xclip
     xfce.xfce4-screenshooter
 
+    # Haskell packages:
+    cabal-install
+    ghc
+    hlint
+    stack
+    stack2nix
+    haskellPackages.intero
+    haskellPackages.stylish-haskell
+    haskellPackages.yesod-bin
+
     # Unstable packages:
     unstable.numix-cursor-theme
 
