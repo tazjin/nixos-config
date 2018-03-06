@@ -13,6 +13,12 @@ in {
     config.allowUnfree = true;
     config.packageOverrides = oldPkgs: oldPkgs // {
       wallpapers = import ./pkgs/wallpapers.nix;
+
+      # Remove nix-mode from the Nix package as a workaround for
+      # https://github.com/NixOS/nixpkgs/issues/36372
+      nix = oldPkgs.nix.overrideAttrs (oldAttrs: rec {
+        postInstall = "rm -rf $out/share/emacs";
+      });
     };
   };
 
