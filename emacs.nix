@@ -39,7 +39,24 @@ sly-company = with pkgs; trivialBuildWithCompany {
   };
 };
 
-# Custom code for packages missing from the current Nix packages.
+# The nix-mode in the official repositories is old and annoying to
+# work with, pin it to something newer instead:
+nix-mode = with pkgs; emacsPackagesNg.melpaBuild {
+  pname   = "nix-mode";
+  version = "20180306";
+
+  src = fetchFromGitHub {
+    owner  = "NixOS";
+    repo   = "nix-mode";
+    rev    = "0ac0271f6c8acdbfddfdbb1211a1972ae562ec17";
+    sha256 = "157vy4xkvaqd76km47sh41wykbjmfrzvg40jxgppnalq9pjxfinp";
+  };
+
+  recipeFile = writeText "nix-mode-recipe" ''
+    (nix-mode :repo "NixOS/nix-mode" :fetcher github
+              :files (:defaults (:exclude "nix-mode-mmm.el")))
+  '';
+};
 
 in emacsWithPackages(epkgs:
   # Actual ELPA packages (the enlightened!)
@@ -75,7 +92,6 @@ in emacsWithPackages(epkgs:
     markdown-mode-plus
     multi-term
     multiple-cursors
-    nix-mode
     paredit
     password-store
     racer
@@ -98,5 +114,5 @@ in emacsWithPackages(epkgs:
   ]) ++
 
   # Custom packaged Emacs packages:
-  [ sly sly-company ]
+  [ sly sly-company nix-mode ]
 )
