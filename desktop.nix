@@ -7,7 +7,7 @@ in {
   # Configure basic X-server stuff:
   services.xserver = {
     enable = true;
-    layout = "us,no";
+    layout = "us,no,ru";
     xkbOptions = "caps:super, grp:shifts_toggle, parens:swap_brackets";
 
     # Give EXWM permission to control the session.
