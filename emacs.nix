@@ -106,6 +106,7 @@ in emacsWithPackages(epkgs:
 
   # Bleeding-edge packages:
   (with epkgs.melpaPackages; [
+    edit-server
     helm-pass
     pg
     racket-mode
