@@ -108,9 +108,11 @@ in emacsWithPackages(epkgs:
   (with epkgs.melpaPackages; [
     edit-server
     helm-pass
+    kotlin-mode
     pg
     racket-mode
     restclient
+    toml-mode
     uuidgen
   ]) ++
 
