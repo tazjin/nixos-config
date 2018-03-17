@@ -7,6 +7,12 @@
   services.xserver.videoDrivers = [ "intel" ];
   programs.light.enable = true;
 
+  # Office printer configuration
+  services.printing.enable  = true;
+  services.printing.drivers = [ pkgs.hplip ];
+  services.avahi.enable     = true;
+  services.avahi.nssmdns    = true;
+
   networking = {
     hostName = "adho";
     wireless.enable = true;
