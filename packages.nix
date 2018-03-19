@@ -86,12 +86,12 @@ in {
 
     # Unstable packages:
     unstable.numix-cursor-theme
+    unstable.kontemplate
 
     # Overlay packages:
     (rustChannelOf { date = "2018-01-04"; channel = "stable"; }).rust # Rust 1.23.0
 
     # Custom packages:
-    (import pkgs/kontemplate.nix)
     (import pkgs/mq-cli.nix)
     (import pkgs/nixfd.nix)
     (import pkgs/pulseaudio-ctl.nix)
@@ -100,4 +100,3 @@ in {
     (import pkgs/gopass-bin.nix { inherit pkgs; })
   ];
 }
-
