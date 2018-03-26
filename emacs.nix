@@ -107,6 +107,7 @@ in emacsWithPackages(epkgs:
   # Bleeding-edge packages:
   (with epkgs.melpaPackages; [
     edit-server
+    elm-mode
     helm-pass
     kotlin-mode
     pg
