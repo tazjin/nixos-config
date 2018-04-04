@@ -5,20 +5,12 @@
 { config, pkgs, ... }:
 
 let unstable = import <nixos-unstable> { config.allowUnfree = true; };
-    rust-overlay = import nixpkgs-mozilla/rust-overlay.nix;
 in {
   # Configure the Nix package manager
   nixpkgs = {
-    overlays = [ rust-overlay ];
     config.allowUnfree = true;
     config.packageOverrides = oldPkgs: oldPkgs // {
       wallpapers = import ./pkgs/wallpapers.nix;
-
-      # Remove nix-mode from the Nix package as a workaround for
-      # https://github.com/NixOS/nixpkgs/issues/36372
-      nix = oldPkgs.nix.overrideAttrs (oldAttrs: rec {
-        postInstall = "rm -rf $out/share/emacs";
-      });
     };
   };
 
@@ -31,6 +23,7 @@ in {
     dnsutils
     exa
     fd
+    firefox-bin
     fish
     gcc
     git
@@ -40,7 +33,7 @@ in {
     gnumake
     gnupg
     google-cloud-sdk
-    firefox-bin
+    gopass
     htop
     i3lock
     iftop
@@ -67,6 +60,7 @@ in {
     spotify
     stdmanpages
     tdesktop
+    terraform_0_10
     tig
     tmux
     tree
@@ -87,16 +81,9 @@ in {
     # Unstable packages:
     unstable.numix-cursor-theme
     unstable.kontemplate
-
-    # Overlay packages:
-    (rustChannelOf { date = "2018-01-04"; channel = "stable"; }).rust # Rust 1.23.0
+    unstable.mq-cli
 
     # Custom packages:
-    (import pkgs/mq-cli.nix)
-    (import pkgs/nixfd.nix)
     (import pkgs/pulseaudio-ctl.nix)
-    (import pkgs/stern-bin.nix)
-    (import pkgs/terraform-bin.nix)
-    (import pkgs/gopass-bin.nix { inherit pkgs; })
   ];
 }
