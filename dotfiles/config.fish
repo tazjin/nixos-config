@@ -29,3 +29,6 @@ alias edit 'emacsclient -n'
 
 # Old habits die hard (also ls is just easier to type):
 alias ls 'exa'
+
+# Fix up nix-env & friends for Nix 2.0
+export NIX_REMOTE=daemon
