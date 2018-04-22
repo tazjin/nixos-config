@@ -1,6 +1,6 @@
 # Derivation for Emacs configured with the packages that I need:
 
-{ pkgs ? import <nixos> {} }:
+{ pkgs }:
 
 let emacsWithPackages = with pkgs; (emacsPackagesNgGen emacs).emacsWithPackages;
 sly = with pkgs; emacsPackagesNg.melpaBuild {
@@ -59,13 +59,15 @@ nix-mode = with pkgs; emacsPackagesNg.melpaBuild {
 };
 
 in emacsWithPackages(epkgs:
+  # Pinned packages:
+  (with pkgs.pinnedEmacs; [ exwm ]) ++
+
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
     ace-window
     adjust-parens
     avy
     company
-    exwm
     pinentry
     rainbow-mode
     undo-tree

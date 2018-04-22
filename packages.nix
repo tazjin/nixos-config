@@ -28,6 +28,8 @@ in {
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
 
+      # Override EXWM from 0.17 -> 0.18
+      pinnedEmacs.exwm = unstable.emacsPackagesNg.elpaPackages.exwm;
     };
   };
 
