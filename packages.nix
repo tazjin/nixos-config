@@ -5,18 +5,21 @@
 { config, pkgs, ... }:
 
 let
+  fetchChannel = { rev, sha256 }: import (fetchTarball {
+    inherit sha256;
+    url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
+  }) { config.allowUnfree = true; };
+
   # Channels last updated: 2014-04-22
 
 
   # Certain packages from unstable are required in my daily setup. To
   # get access to them, they are hand-picked from the unstable channel
   # and set as overrides on the system package set.
-  unstable = import (pkgs.fetchFromGitHub {
-    owner  = "NixOS";
-    repo   = "nixpkgs-channels";
-    rev    = "6c064e6b1f34a8416f990db0cc617a7195f71588";
+  unstable = fetchChannel {
+    rev = "6c064e6b1f34a8416f990db0cc617a7195f71588";
     sha256 = "1rqzh475xn43phagrr30lb0fd292c1s8as53irihsnd5wcksnbyd";
-  }) { config.allowUnfree = true; };
+  };
 in {
   # Configure the Nix package manager
   nixpkgs = {
