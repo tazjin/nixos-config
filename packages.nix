@@ -12,6 +12,13 @@ let
 
   # Channels last updated: 2014-04-22
 
+  # Instead of relying on Nix channels and ending up with out-of-sync
+  # situations between machines, the commit for the stable Nix channel
+  # is pinned here.
+  stable = fetchChannel {
+    rev    = "06c576b0525da85f2de86b3c13bb796d6a0c20f6";
+    sha256 = "01cra89drfjf3yhii5na0j5ivap2wcs0h8i0xcxrjs946nk4pp5j";
+  };
 
   # Certain packages from unstable are required in my daily setup. To
   # get access to them, they are hand-picked from the unstable channel
@@ -24,7 +31,9 @@ in {
   # Configure the Nix package manager
   nixpkgs = {
     config.allowUnfree = true;
-    config.packageOverrides = oldPkgs: oldPkgs // {
+    # To use the pinned channel, the original package set is thrown
+    # away in the overrides:
+    config.packageOverrides = oldPkgs: stable // {
       wallpapers = import ./pkgs/wallpapers.nix;
       pulseaudio-ctl = import pkgs/pulseaudio-ctl.nix;
 
