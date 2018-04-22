@@ -54,6 +54,12 @@
         psk = "sarabar1989";
       };
 
+      # The Dubliner
+      "DubGjest" = {
+        # of course
+        psk = "Guinness";
+      };
+
       # Sync Compound
       "RWDS" = {
         psk = "radicalagenda";
