@@ -4,13 +4,30 @@
 
 { config, pkgs, ... }:
 
-let unstable = import <nixos-unstable> { config.allowUnfree = true; };
+let
+  # Channels last updated: 2014-04-22
+
+
+  # Certain packages from unstable are required in my daily setup. To
+  # get access to them, they are hand-picked from the unstable channel
+  # and set as overrides on the system package set.
+  unstable = import (pkgs.fetchFromGitHub {
+    owner  = "NixOS";
+    repo   = "nixpkgs-channels";
+    rev    = "6c064e6b1f34a8416f990db0cc617a7195f71588";
+    sha256 = "1rqzh475xn43phagrr30lb0fd292c1s8as53irihsnd5wcksnbyd";
+  }) { config.allowUnfree = true; };
 in {
   # Configure the Nix package manager
   nixpkgs = {
     config.allowUnfree = true;
     config.packageOverrides = oldPkgs: oldPkgs // {
       wallpapers = import ./pkgs/wallpapers.nix;
+      pulseaudio-ctl = import pkgs/pulseaudio-ctl.nix;
+
+      kontemplate = unstable.kontemplate;
+      mq-cli = unstable.mq-cli;
+
     };
   };
 
@@ -40,18 +57,22 @@ in {
     jetbrains.idea-ultimate
     jq
     kubernetes
+    kontemplate
     lispPackages.quicklisp
     lxappearance-gtk3
     manpages
     maven
+    mq-cli
     nixops
     numix-gtk-theme
     numix-icon-theme
+    numix-cursor-theme
     openjdk
     openssl
     openssl.dev
     pass
     pavucontrol
+    pulseaudio-ctl
     pkgconfig
     qjackctl
     ripgrep
@@ -77,13 +98,5 @@ in {
     haskellPackages.intero
     haskellPackages.stylish-haskell
     haskellPackages.yesod-bin
-
-    # Unstable packages:
-    unstable.numix-cursor-theme
-    unstable.kontemplate
-    unstable.mq-cli
-
-    # Custom packages:
-    (import pkgs/pulseaudio-ctl.nix)
   ];
 }
