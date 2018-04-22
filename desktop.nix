@@ -3,6 +3,9 @@
 { config, lib, pkgs, ... }:
 
 let emacs = import ./emacs.nix { inherit pkgs; };
+screenLock = pkgs.writeShellScriptBin "screen-lock" ''
+  find ${pkgs.wallpapers} -name "*.png" | shuf -n1 | xargs i3lock -f -t -i
+'';
 in {
   # Configure basic X-server stuff:
   services.xserver = {
@@ -14,6 +17,8 @@ in {
     displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
   };
 
+  # Add a shell script with random screen lock wallpaper selection
+  environment.systemPackages = [ screenLock ];
 
   # Apparently when you have house guests they complain about your screen tearing!
   services.compton.enable = true;
