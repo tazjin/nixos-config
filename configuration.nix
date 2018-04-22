@@ -49,6 +49,8 @@
     ssh.startAgent = true;
   };
 
+  services.postgresql.enable = true;
+
   # Configure user account
   users.defaultUserShell = pkgs.fish;
   users.extraUsers.vincent = {
