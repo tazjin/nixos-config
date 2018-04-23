@@ -94,6 +94,7 @@ in emacsWithPackages(epkgs:
     markdown-mode-plus
     multi-term
     multiple-cursors
+    nginx-mode
     paredit
     password-store
     racer
