@@ -48,6 +48,7 @@ in {
       noto-fonts-cjk
       noto-fonts-emoji
       powerline-fonts
+      helvetica-neue-lt-std
     ];
   };
 
