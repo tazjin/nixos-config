@@ -26,6 +26,7 @@ alias gf 'git fetch'
 alias gap 'git add -p'
 alias pbcopy 'xclip -selection clipboard'
 alias edit 'emacsclient -n'
+alias servedir 'nix-shell -p haskellPackages.wai-app-static --run warp'
 
 # Old habits die hard (also ls is just easier to type):
 alias ls 'exa'
