@@ -49,6 +49,8 @@ in {
   environment.systemPackages = with pkgs; [
     # Default nixos.* packages:
     alacritty
+    binutils-unwrapped
+    cargo
     curl
     direnv
     dnsutils
@@ -70,26 +72,27 @@ in {
     iftop
     jetbrains.idea-ultimate
     jq
-    kubernetes
     kontemplate
+    kubernetes
     lispPackages.quicklisp
     lxappearance-gtk3
     manpages
     maven
     mq-cli
     nixops
+    numix-cursor-theme
     numix-gtk-theme
     numix-icon-theme
-    numix-cursor-theme
     openjdk
     openssl
     openssl.dev
     pass
     pavucontrol
-    pulseaudio-ctl
     pkgconfig
+    pulseaudio-ctl
     qjackctl
     ripgrep
+    rustc
     rustracer
     sbcl
     spotify
