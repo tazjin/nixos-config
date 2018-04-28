@@ -24,14 +24,16 @@
   boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
   hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
-  # Don't use ISP's DNS servers:
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
+  networking = {
+    # Don't use ISP's DNS servers:
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
 
-  # Open Chromecast-related ports
-  firewall.allowedTCPPorts = [ 5556 5558 ];
+    # Open Chromecast-related ports
+    firewall.allowedTCPPorts = [ 5556 5558 ];
+  };
 
   # Configure emacs:
   # (actually, that's a lie, this only installs emacs!)
