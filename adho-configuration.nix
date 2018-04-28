@@ -98,9 +98,6 @@
       "Lorry Gjest" = {};
       "Amundsengjest" = {};
     };
-
-    # Open Chromecast-related ports
-    firewall.allowedTCPPorts = [ 5556 5558 ];
   };
 
   hardware.bluetooth.enable = true;

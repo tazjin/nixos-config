@@ -30,6 +30,9 @@
     "1.0.0.1"
   ];
 
+  # Open Chromecast-related ports
+  firewall.allowedTCPPorts = [ 5556 5558 ];
+
   # Configure emacs:
   # (actually, that's a lie, this only installs emacs!)
   services.emacs = {
