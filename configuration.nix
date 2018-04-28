@@ -24,6 +24,12 @@
   boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
   hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
+  # Don't use ISP's DNS servers:
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
+
   # Configure emacs:
   # (actually, that's a lie, this only installs emacs!)
   services.emacs = {
