@@ -60,7 +60,12 @@ nix-mode = with pkgs; emacsPackagesNg.melpaBuild {
 
 in emacsWithPackages(epkgs:
   # Pinned packages:
-  (with pkgs.pinnedEmacs; [ exwm ]) ++
+  (with pkgs.pinnedEmacs; [
+    exwm
+    ivy
+    ivy-gitlab
+    ivy-pass
+  ]) ++
 
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [

@@ -42,6 +42,9 @@ in {
 
       # Override EXWM from 0.17 -> 0.18
       pinnedEmacs.exwm = unstable.emacsPackagesNg.elpaPackages.exwm;
+      pinnedEmacs.ivy = unstable.emacsPackagesNg.melpaPackages.ivy;
+      pinnedEmacs.ivy-pass = unstable.emacsPackagesNg.melpaPackages.ivy-pass;
+      pinnedEmacs.ivy-gitlab = unstable.emacsPackagesNg.melpaPackages.ivy-gitlab;
     };
   };
 
