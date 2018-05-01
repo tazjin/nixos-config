@@ -17,6 +17,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.cleanTmpDir = true;
   hardware.pulseaudio.enable = true;
   time.timeZone = "Europe/Oslo";
 
