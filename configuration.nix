@@ -57,6 +57,8 @@
   # Configure various other applications:
   programs = {
     java.enable = true;
+    java.package = pkgs.openjdk;
+
     fish.enable = true;
     ssh.startAgent = true;
   };
