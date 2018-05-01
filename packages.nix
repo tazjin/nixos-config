@@ -40,11 +40,15 @@ in {
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
 
-      # Override EXWM from 0.17 -> 0.18
+      # Override various Emacs packages from unstable:
+      pinnedEmacs.counsel = unstable.emacsPackagesNg.melpaPackages.counsel;
+      pinnedEmacs.counsel-tramp = unstable.emacsPackagesNg.melpaPackages.counsel-tramp;
       pinnedEmacs.exwm = unstable.emacsPackagesNg.elpaPackages.exwm;
       pinnedEmacs.ivy = unstable.emacsPackagesNg.melpaPackages.ivy;
-      pinnedEmacs.ivy-pass = unstable.emacsPackagesNg.melpaPackages.ivy-pass;
       pinnedEmacs.ivy-gitlab = unstable.emacsPackagesNg.melpaPackages.ivy-gitlab;
+      pinnedEmacs.ivy-hydra = unstable.emacsPackagesNg.melpaPackages.ivy-hydra;
+      pinnedEmacs.ivy-pass = unstable.emacsPackagesNg.melpaPackages.ivy-pass;
+      pinnedEmacs.swiper = unstable.emacsPackagesNg.melpaPackages.swiper;
     };
   };
 
