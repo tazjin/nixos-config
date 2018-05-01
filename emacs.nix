@@ -59,13 +59,8 @@ nix-mode = with pkgs; emacsPackagesNg.melpaBuild {
 };
 
 in emacsWithPackages(epkgs:
-  # Pinned packages:
-  (with pkgs.pinnedEmacs; [
-    exwm
-    ivy
-    ivy-gitlab
-    ivy-pass
-  ]) ++
+  # Pinned packages (from unstable):
+  (with pkgs; with lib; attrValues pinnedEmacs) ++
 
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
@@ -79,22 +74,25 @@ in emacsWithPackages(epkgs:
     which-key
   ]) ++
 
-  # Stable packages:
-  (with epkgs.melpaStablePackages; [
+  # MELPA packages:
+  (with epkgs.melpaPackages; [
     browse-kill-ring
     cargo
     dash
     dash-functional
     dockerfile-mode
+    edit-server
+    elm-mode
     erlang
+    flx
     flycheck
     go-mode
     gruber-darker-theme
     haskell-mode
-    helm
     ht
     idle-highlight-mode
     intero
+    kotlin-mode
     magit
     markdown-mode-plus
     multi-term
@@ -102,27 +100,19 @@ in emacsWithPackages(epkgs:
     nginx-mode
     paredit
     password-store
+    pg
     racer
+    racket-mode
     rainbow-delimiters
+    restclient
     rust-mode
     s
     smart-mode-line
     string-edit
     terraform-mode
-    yaml-mode
-  ]) ++
-
-  # Bleeding-edge packages:
-  (with epkgs.melpaPackages; [
-    edit-server
-    elm-mode
-    helm-pass
-    kotlin-mode
-    pg
-    racket-mode
-    restclient
     toml-mode
     uuidgen
+    yaml-mode
   ]) ++
 
   # Custom packaged Emacs packages:
