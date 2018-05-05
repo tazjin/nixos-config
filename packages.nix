@@ -61,9 +61,11 @@ in {
     curl
     direnv
     dnsutils
+    evince
     exa
     fd
-    firefox-bin
+    file
+    firefox-unwrapped
     fish
     gcc
     git
@@ -86,6 +88,7 @@ in {
     manpages
     maven
     mq-cli
+    ngrok
     nixops
     numix-cursor-theme
     numix-gtk-theme
@@ -97,19 +100,26 @@ in {
     pavucontrol
     pkgconfig
     pulseaudio-ctl
+    pwgen
     qjackctl
     ripgrep
     rustc
     rustracer
     sbcl
+    screen
+    siege
     spotify
     stdmanpages
     tdesktop
     terraform_0_10
     tig
     tmux
+    tokei
+    transmission
     tree
+    units
     unzip
+    vlc
     xclip
     xfce.xfce4-screenshooter
 
