@@ -12,6 +12,7 @@ in {
     enable = true;
     layout = "us,no,ru";
     xkbOptions = "caps:super, grp:shifts_toggle, parens:swap_brackets";
+    exportConfiguration = true;
 
     # Give EXWM permission to control the session.
     displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
