@@ -101,13 +101,13 @@ in emacsWithPackages(epkgs:
     paredit
     password-store
     pg
-    racer
     racket-mode
     rainbow-delimiters
     restclient
     rust-mode
     s
     smart-mode-line
+    smartparens
     string-edit
     terraform-mode
     toml-mode
