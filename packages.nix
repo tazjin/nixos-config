@@ -103,8 +103,7 @@ in {
     pwgen
     qjackctl
     ripgrep
-    rustc
-    rustracer
+    rustup
     sbcl
     screen
     siege
