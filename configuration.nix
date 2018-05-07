@@ -44,6 +44,8 @@
     package = import ./emacs.nix { inherit pkgs; };
   };
 
+  services.openssh.enable = true;
+
   # Enable GNOME keyring (required for Evolution)
   services.gnome3.gnome-keyring.enable = true;
 

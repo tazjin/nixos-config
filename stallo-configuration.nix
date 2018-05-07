@@ -4,8 +4,6 @@
 {
   boot.initrd.luks.devices.stallo-luks.device = "/dev/disk/by-uuid/b484cf1e-a27b-4785-8bd6-fa85a004b073";
 
-  services.openssh.enable = true;
-
   # Use proprietary nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
 
