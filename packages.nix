@@ -41,17 +41,18 @@ in {
       mq-cli = unstable.mq-cli;
 
       # Override various Emacs packages from unstable:
-      pinnedEmacs = {
-        counsel = unstable.emacsPackagesNg.melpaPackages.counsel;
-        counsel-tramp = unstable.emacsPackagesNg.melpaPackages.counsel-tramp;
-        exwm = unstable.emacsPackagesNg.elpaPackages.exwm;
-        ivy = unstable.emacsPackagesNg.melpaPackages.ivy;
-        ivy-gitlab = unstable.emacsPackagesNg.melpaPackages.ivy-gitlab;
-        ivy-hydra = unstable.emacsPackagesNg.melpaPackages.ivy-hydra;
-        ivy-pass = unstable.emacsPackagesNg.melpaPackages.ivy-pass;
-        swiper = unstable.emacsPackagesNg.melpaPackages.swiper;
-        lsp-mode = unstable.emacsPackagesNg.lsp-mode;
-        lsp-rust = unstable.emacsPackagesNg.lsp-rust;
+      pinnedEmacs = with unstable.emacsPackagesNg; {
+        counsel = melpaPackages.counsel;
+        counsel-tramp = melpaPackages.counsel-tramp;
+        company-lsp = company-lsp;
+        exwm = elpaPackages.exwm;
+        ivy = melpaPackages.ivy;
+        ivy-gitlab = melpaPackages.ivy-gitlab;
+        ivy-hydra = melpaPackages.ivy-hydra;
+        ivy-pass = melpaPackages.ivy-pass;
+        swiper = melpaPackages.swiper;
+        lsp-mode = lsp-mode;
+        lsp-rust = lsp-rust;
       };
     };
   };
