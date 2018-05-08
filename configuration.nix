@@ -25,6 +25,9 @@
   boot.kernelModules = [ "snd-seq" "snd-rawmidi" ];
   hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
+  # Update Intel microcode on boot (both machines have Intel CPUs):
+  hardware.cpu.intel.updateMicrocode = true;
+
   networking = {
     # Don't use ISP's DNS servers:
     nameservers = [
