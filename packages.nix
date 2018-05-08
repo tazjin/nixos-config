@@ -42,18 +42,20 @@ in {
 
       # Override various Emacs packages from unstable:
       pinnedEmacs = with unstable.emacsPackagesNg; {
-        counsel = melpaPackages.counsel;
-        counsel-tramp = melpaPackages.counsel-tramp;
-        company-lsp = company-lsp;
-        exwm = elpaPackages.exwm;
-        ivy = melpaPackages.ivy;
-        ivy-gitlab = melpaPackages.ivy-gitlab;
-        ivy-hydra = melpaPackages.ivy-hydra;
-        ivy-pass = melpaPackages.ivy-pass;
-        swiper = melpaPackages.swiper;
-        lsp-mode = lsp-mode;
-        lsp-rust = lsp-rust;
-        lsp-ui = lsp-ui;
+        inherit
+          company-lsp
+          counsel
+          counsel-tramp
+          exwm
+          ivy
+          ivy-gitlab
+          ivy-hydra
+          ivy-pass
+          lsp-mode
+          lsp-rust
+          lsp-ui
+          markdown-mode
+          swiper;
       };
     };
   };
