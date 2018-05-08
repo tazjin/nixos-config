@@ -33,3 +33,8 @@ alias ls 'exa'
 
 # Fix up nix-env & friends for Nix 2.0
 export NIX_REMOTE=daemon
+
+# Fix display of fish in emacs' term-mode:
+function fish_title
+  true
+end
