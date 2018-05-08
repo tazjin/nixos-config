@@ -53,6 +53,7 @@ in {
         swiper = melpaPackages.swiper;
         lsp-mode = lsp-mode;
         lsp-rust = lsp-rust;
+        lsp-ui = lsp-ui;
       };
     };
   };
