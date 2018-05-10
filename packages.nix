@@ -65,7 +65,6 @@ in {
     # Default nixos.* packages:
     alacritty
     binutils-unwrapped
-    cargo
     curl
     direnv
     dnsutils
