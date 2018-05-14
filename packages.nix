@@ -10,22 +10,22 @@ let
     url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
   }) { config.allowUnfree = true; };
 
-  # Channels last updated: 2014-05-01
+  # Channels last updated: 2014-05-14
 
   # Instead of relying on Nix channels and ending up with out-of-sync
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "ce0d9d638ded6119f19d87e433e160603683fb1b";
-    sha256 = "0na6kjk4xw6gqrn3a903yv3zfa64bspq2q3kd6wyf52y44j3s8sx";
+    rev    = "ef74cafd3e5914fdadd08bf20303328d72d65d6c";
+    sha256 = "0xj5gv8k40vi7fczrqv0ppcmhczddh30kyizvzfg5wyc15fm2dmg";
   };
 
   # Certain packages from unstable are required in my daily setup. To
   # get access to them, they are hand-picked from the unstable channel
   # and set as overrides on the system package set.
   unstable = fetchChannel {
-    rev    = "1b1be29bf827fc177100ae175030b2fda4132e47";
-    sha256 = "0dnwyvh2xfbf35apf17iw59hscf1jdqn8nx7hm7yh9c0ypkh2qy3";
+    rev    = "6db7f92cc2af827e8b8b181bf5ed828a1d0f141d";
+    sha256 = "1hpgn22j35mgfyrrkgyg28fm4mzllk5wfv5mrrn29kiglqb462fr";
   };
 in {
   # Configure the Nix package manager
