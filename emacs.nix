@@ -115,5 +115,5 @@ in emacsWithPackages(epkgs:
   ]) ++
 
   # Custom packaged Emacs packages:
-  [ sly sly-company nix-mode ]
+  [ sly sly-company nix-mode pkgs.notmuch ]
 )
