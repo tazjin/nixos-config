@@ -97,6 +97,7 @@ in {
     mq-cli
     ngrok
     nixops
+    notmuch
     numix-cursor-theme
     numix-gtk-theme
     numix-icon-theme

@@ -52,6 +52,12 @@
   # Enable GNOME keyring (required for Evolution)
   services.gnome3.gnome-keyring.enable = true;
 
+  # Enable OfflineIMAP (configuration itself is user-data)
+  services.offlineimap = {
+    install = true;
+    path    = with pkgs; [ pass notmuch ];
+  };
+
   virtualisation = {
     # Configure Docker (with socket activation):
     # Side note: ... why is this in virtualisation? ...
