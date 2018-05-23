@@ -94,6 +94,7 @@ in emacsWithPackages(epkgs:
     intero
     kotlin-mode
     magit
+    markdown-toc
     multi-term
     multiple-cursors
     nginx-mode
@@ -111,6 +112,7 @@ in emacsWithPackages(epkgs:
     terraform-mode
     toml-mode
     uuidgen
+    web-mode
     yaml-mode
   ]) ++
 
