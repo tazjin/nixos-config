@@ -54,6 +54,7 @@ in {
           lsp-rust
           lsp-ui
           markdown-mode
+          markdown-toc
           swiper;
       };
     };

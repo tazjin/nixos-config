@@ -94,7 +94,6 @@ in emacsWithPackages(epkgs:
     intero
     kotlin-mode
     magit
-    markdown-toc
     multi-term
     multiple-cursors
     nginx-mode
