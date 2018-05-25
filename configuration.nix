@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports =
@@ -37,6 +37,15 @@
 
     # Open Chromecast-related ports
     firewall.allowedTCPPorts = [ 5556 5558 ];
+  };
+
+  # Generate an immutable /etc/resolv.conf from the nameserver settings
+  # above (otherwise DHCP overwrites it):
+  environment.etc."resolv.conf" = with lib; with pkgs; {
+    source = writeText "resolv.conf" ''
+      ${concatStringsSep "\n" (map (ns: "nameserver ${ns}") config.networking.nameservers)}
+      options edns0
+    '';
   };
 
   # Configure emacs:
