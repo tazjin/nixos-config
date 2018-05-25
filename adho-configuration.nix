@@ -86,6 +86,11 @@
         psk = "Oslo2018";
       };
 
+      # Pils & Programmering
+      "BEKKguest" = {
+        psk = "guest7890";
+      };
+
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
       "The Thief" = {};
