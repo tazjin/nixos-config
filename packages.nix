@@ -118,6 +118,7 @@ in {
     siege
     spotify
     stdmanpages
+    systemd.dev
     tdesktop
     terraform
     tig
