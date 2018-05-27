@@ -91,6 +91,11 @@
         psk = "guest7890";
       };
 
+      # Røverstaden
+      "Roverstaden" = {
+        psk = "r0verstaden2018";
+      };
+
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
       "The Thief" = {};
