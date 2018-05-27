@@ -10,22 +10,21 @@ let
     url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
   }) { config.allowUnfree = true; };
 
-  # Channels last updated: 2014-05-14
+  # Channels last updated: 2014-05-26
 
   # Instead of relying on Nix channels and ending up with out-of-sync
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "ef74cafd3e5914fdadd08bf20303328d72d65d6c";
-    sha256 = "0xj5gv8k40vi7fczrqv0ppcmhczddh30kyizvzfg5wyc15fm2dmg";
+    rev    = "2f6440eb09b7e6e3322720ac91ce7e2cdeb413f9";
+    sha256 = "0vb7ikjscrp2rw0dfw6pilxqpjm50l5qg2x2mn1vfh93dkl2aan7";
   };
 
-  # Certain packages from unstable are required in my daily setup. To
-  # get access to them, they are hand-picked from the unstable channel
-  # and set as overrides on the system package set.
+  # Certain packages from unstable are hand-picked into the package
+  # set.
   unstable = fetchChannel {
-    rev    = "6db7f92cc2af827e8b8b181bf5ed828a1d0f141d";
-    sha256 = "1hpgn22j35mgfyrrkgyg28fm4mzllk5wfv5mrrn29kiglqb462fr";
+    rev    = "5da85431fb1df4fb3ac36730b2591ccc9bdf5c21";
+    sha256 = "0pc15wh5al9dmhcj29gwqir3wzpyk2nrplibr5xjk2bdvw6sv6c1";
   };
 in {
   # Configure the Nix package manager
@@ -65,6 +64,7 @@ in {
     # Default nixos.* packages:
     alacritty
     binutils-unwrapped
+    cargo
     curl
     direnv
     dnsutils
@@ -86,7 +86,8 @@ in {
     htop
     i3lock
     iftop
-    jetbrains.idea-ultimate
+    # Upstream link is down:
+    # jetbrains.idea-ultimate
     jq
     kontemplate
     kubernetes
@@ -97,7 +98,6 @@ in {
     mq-cli
     ngrok
     nixops
-    notmuch
     numix-cursor-theme
     numix-gtk-theme
     numix-icon-theme
