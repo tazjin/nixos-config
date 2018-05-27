@@ -118,7 +118,7 @@ in {
     spotify
     stdmanpages
     tdesktop
-    terraform_0_10
+    terraform
     tig
     tmux
     tokei
