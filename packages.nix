@@ -121,6 +121,7 @@ in {
     systemd.dev
     tdesktop
     terraform
+    thinkfan
     tig
     tmux
     tokei
