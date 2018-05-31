@@ -26,6 +26,12 @@ let
     rev    = "5da85431fb1df4fb3ac36730b2591ccc9bdf5c21";
     sha256 = "0pc15wh5al9dmhcj29gwqir3wzpyk2nrplibr5xjk2bdvw6sv6c1";
   };
+
+  # Temporarily import a commit from master directly to pick emacs26.
+  # Should be removed once that update is in nixos-unstable.
+  master = import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/288ce0cb845c03fafa1f3c673440e9922f22131a.tar.gz";
+  }) {};
 in {
   # Configure the Nix package manager
   nixpkgs = {
@@ -38,6 +44,7 @@ in {
 
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
+      emacs = master.emacs;
 
       # Override various Emacs packages from unstable:
       pinnedEmacs = with unstable.emacsPackagesNg; {
