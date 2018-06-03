@@ -49,7 +49,6 @@ in {
       # Override various Emacs packages from unstable:
       pinnedEmacs = with unstable.emacsPackagesNg; {
         inherit
-          company-lsp
           counsel
           counsel-tramp
           exwm
@@ -57,9 +56,6 @@ in {
           ivy-gitlab
           ivy-hydra
           ivy-pass
-          lsp-mode
-          lsp-rust
-          lsp-ui
           markdown-mode
           markdown-toc
           swiper;

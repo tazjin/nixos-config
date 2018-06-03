@@ -1,5 +1,4 @@
 # Derivation for Emacs configured with the packages that I need:
-
 { pkgs }:
 
 let emacsWithPackages = with pkgs; (emacsPackagesNgGen emacs).emacsWithPackages;
@@ -58,6 +57,20 @@ nix-mode = with pkgs; emacsPackagesNg.melpaBuild {
   '';
 };
 
+# The default Rust language server mode is not really usable, install
+# `eglot` instead and hope for the best.
+eglot = with pkgs; emacsPackagesNg.melpaBuild rec {
+  pname = "eglot";
+  version = "0.8";
+
+  src = fetchFromGitHub {
+    owner  = "joaotavora";
+    repo   = "eglot";
+    rev    = version;
+    sha256 = "1avsry84sp3s2vr2iz9dphm579xgw8pqlwffl75gn5akykgazwdx";
+  };
+};
+
 in emacsWithPackages(epkgs:
   # Pinned packages (from unstable):
   (with pkgs; with lib; attrValues pinnedEmacs) ++
@@ -91,7 +104,6 @@ in emacsWithPackages(epkgs:
     haskell-mode
     ht
     idle-highlight-mode
-    intero
     kotlin-mode
     magit
     multi-term
@@ -116,5 +128,5 @@ in emacsWithPackages(epkgs:
   ]) ++
 
   # Custom packaged Emacs packages:
-  [ sly sly-company nix-mode pkgs.notmuch ]
+  [ sly sly-company nix-mode eglot pkgs.notmuch ]
 )
