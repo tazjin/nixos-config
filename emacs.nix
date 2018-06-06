@@ -98,7 +98,6 @@ in emacsWithPackages(epkgs:
     elm-mode
     erlang
     flx
-    flycheck
     go-mode
     gruber-darker-theme
     haskell-mode
@@ -124,6 +123,7 @@ in emacsWithPackages(epkgs:
     toml-mode
     uuidgen
     web-mode
+    websocket
     yaml-mode
   ]) ++
 
