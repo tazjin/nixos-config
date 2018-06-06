@@ -44,6 +44,7 @@ in {
   # Enable OfflineIMAP timer & service:
   systemd.user.timers.offlineimap = {
     description = "OfflineIMAP timer";
+    wantedBy    = [ "timers.target" ];
 
     timerConfig = {
       Unit       = "offlineimap.service";
@@ -55,7 +56,6 @@ in {
   systemd.user.services.offlineimap = {
     description = "OfflineIMAP service";
     path = with pkgs; [ pass notmuch ];
-    wantedBy    = [ "default.target" ];
 
     serviceConfig = {
       Type            = "oneshot";
