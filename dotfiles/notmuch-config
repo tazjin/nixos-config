@@ -1,0 +1,21 @@
+# .notmuch-config - Configuration file for the notmuch mail system
+#
+# For more information about notmuch, see https://notmuchmail.org
+
+[database]
+path=/home/vincent/mail
+
+[user]
+name=Vincent Ambo
+primary_email=mail@tazj.in
+other_email=vincent@aprila.no;tazjin@gmail.com;
+
+[new]
+tags=unread;inbox;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true

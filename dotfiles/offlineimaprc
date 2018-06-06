@@ -1,0 +1,61 @@
+[general]
+accounts = aprila, tazjin, gmail
+
+[DEFAULT]
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+# Main work account:
+[Account aprila]
+localrepository = aprila-local
+remoterepository = aprila-remote
+
+[Repository aprila-local]
+type = Maildir
+localfolders = ~/mail/aprila
+
+[Repository aprila-remote]
+type = IMAP
+remotehost = outlook.office365.com
+remoteuser = vincent@aprila.no
+remotepassfile = ~/.config/mail/aprila-pass
+# Office365 is a naughty boy when it comes to IMAP. Even worse, they
+# also seem to have decided that they should change IMAP folder names
+# based on the UI language.
+#
+# I can't be bothered to implement the entire (relatively long)
+# blacklist, so I'll instead whitelist relevant folders:
+folderfilter = lambda folder: folder in ['INBOX', 'Arkiv', 'Sende element']
+
+# Private GMail account (old):
+[Account gmail]
+# maxage = 30 # otherwise the volume is too high ...
+localrepository = gmail-local
+remoterepository = gmail-remote
+synclabels = yes
+
+[Repository gmail-local]
+type = GmailMaildir
+localfolders = ~/mail/gmail
+
+[Repository gmail-remote]
+type = Gmail
+remoteuser = tazjin@gmail.com
+remotepassfile = ~/.config/mail/gmail-pass
+folderfilter = lambda folder: folder == 'INBOX'
+
+# Main private account:
+[Account tazjin]
+localrepository = tazjin-local
+remoterepository = tazjin-remote
+
+[Repository tazjin-local]
+type = Maildir
+localfolders = ~/mail/tazjin
+
+[Repository tazjin-remote]
+type = IMAP
+remotehost = mail.runbox.com
+remoteuser = mail@tazj.in
+remotepassfile = ~/.config/mail/tazjin-pass
+auth_mechanisms = LOGIN
