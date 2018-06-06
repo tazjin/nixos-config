@@ -36,6 +36,10 @@
         psk = "speakeasy";
       };
 
+      "Wurst" = {
+        psk = "wurst2015";
+      };
+
       # Eugene's apartment:
       "GET_5G_4FD250" = {
         psk = "62636342";
