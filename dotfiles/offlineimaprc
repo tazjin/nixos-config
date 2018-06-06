@@ -29,7 +29,7 @@ folderfilter = lambda folder: folder in ['INBOX', 'Arkiv', 'Sende element']
 
 # Private GMail account (old):
 [Account gmail]
-# maxage = 30 # otherwise the volume is too high ...
+maxage = 90 # otherwise the volume is too high ...
 localrepository = gmail-local
 remoterepository = gmail-remote
 synclabels = yes
