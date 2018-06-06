@@ -81,7 +81,6 @@ in {
     gcc
     git
     gnome3.dconf
-    gnome3.evolution
     gnome3.glib_networking
     gnumake
     gnupg
@@ -107,6 +106,7 @@ in {
     numix-cursor-theme
     numix-gtk-theme
     numix-icon-theme
+    offlineimap
     openjdk
     openssl
     openssl.dev
