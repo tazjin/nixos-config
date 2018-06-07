@@ -27,6 +27,9 @@ tagConfig = pkgs.writeText "notmuch-tags" ''
 
   # Tag my own mail (from other devices) as sent:
   -inbox +sent -- folder:"aprila/Sende element" OR from:vincent@aprila.no OR from:mail@tazj.in
+
+  # Tag development list
+  -inbox +aprila-dev -- to:dev@aprila.no OR cc:dev@aprila.no
 '';
 
 notmuchIndex = pkgs.writeShellScriptBin "notmuch-index" ''
