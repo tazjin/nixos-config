@@ -103,6 +103,7 @@ in emacsWithPackages(epkgs:
     haskell-mode
     ht
     idle-highlight-mode
+    jq-mode
     kotlin-mode
     magit
     multi-term
