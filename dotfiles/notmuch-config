@@ -7,8 +7,8 @@ path=/home/vincent/mail
 
 [user]
 name=Vincent Ambo
-primary_email=mail@tazj.in
-other_email=vincent@aprila.no;tazjin@gmail.com;
+primary_email=vincent@aprila.no
+other_email=mail@tazj.in;tazjin@gmail.com;
 
 [new]
 tags=unread;inbox;
