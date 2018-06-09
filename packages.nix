@@ -47,11 +47,11 @@ in {
       emacs = master.emacs;
 
       # Override various Emacs packages from unstable:
+      exwm-debug = unstable.emacsPackagesNg.exwm;
       pinnedEmacs = with unstable.emacsPackagesNg; {
         inherit
           counsel
           counsel-tramp
-          exwm
           ivy
           ivy-gitlab
           ivy-hydra

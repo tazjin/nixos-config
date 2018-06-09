@@ -71,6 +71,33 @@ eglot = with pkgs; emacsPackagesNg.melpaBuild rec {
   };
 };
 
+# Build EXWM from git to be able to toggle the debug flag. Debug flag
+# is set to aid in the debugging of this issue:
+# https://github.com/ch11ng/exwm/issues/425
+elpa2nix = with builtins;
+  toFile "elpa2nix.el" (readFile <nixpkgs/pkgs/build-support/emacs/elpa2nix.el>);
+
+exwm = pkgs.exwm-debug.overrideAttrs(oldAttrs: rec {
+  installPhase = ''
+    cp ${oldAttrs.src} exwm-orig.tar
+    tar xvf exwm-orig.tar
+    sed -i 's/defvar exwm-debug-on nil/defvar exwm-debug-on t/g' exwm-0.18/exwm-core.el
+    tar cvf exwm-debug.tar exwm-0.18
+    ls -lh
+
+    emacs --batch -Q -l ${elpa2nix} \
+        -f elpa2nix-install-package \
+        exwm-debug.tar "$out/share/emacs/site-lisp/elpa"
+  '';
+
+  src = pkgs.fetchFromGitHub {
+    owner  = "ch11ng";
+    repo   = "exwm";
+    rev    = "b75c89cae2a1c4c70044f885c44a95fd2f9950dd";
+    sha256 = "0ncxxvx6vf96c2r4yh0b05k6asbsa95c9s4yy2734kgymm2zyl40";
+  };
+});
+
 in emacsWithPackages(epkgs:
   # Pinned packages (from unstable):
   (with pkgs; with lib; attrValues pinnedEmacs) ++
@@ -129,5 +156,5 @@ in emacsWithPackages(epkgs:
   ]) ++
 
   # Custom packaged Emacs packages:
-  [ sly sly-company nix-mode eglot pkgs.notmuch ]
+  [ exwm sly sly-company nix-mode eglot pkgs.notmuch ]
 )
