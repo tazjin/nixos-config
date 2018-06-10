@@ -22,6 +22,9 @@ tagConfig = pkgs.writeText "notmuch-tags" ''
   # Tag emacs-devel mailing list:
   -inbox +emacs-devel -- to:emacs-devel@gnu.org OR cc:emacs-devel@gnu.org
 
+  # Tag nix-devel mailing list:
+  -inbox +nix-devel -- to:nix-devel@googlegroups.com
+
   # Filter out Gitlab mails:
   -inbox +gitlab -- from:gitlab@aprila.no
 
