@@ -71,6 +71,23 @@ eglot = with pkgs; emacsPackagesNg.melpaBuild rec {
   };
 };
 
+# prescient & prescient-ivy provide better filtering in ivy/counsel
+prescient = with pkgs; emacsPackagesNg.melpaBuild {
+  pname = "prescient";
+  version = "20180611";
+
+  src = fetchFromGitHub {
+    owner  = "raxod502";
+    repo   = "prescient.el";
+    rev    = "19a2c6b392ca6130dbbcf70cba57ee34d64fe50c";
+    sha256 = "136q785lyhpgyaiysyq4pw11l83sa9h3q57v6papx813gf7rb7v7";
+  };
+
+  recipeFile = writeText "prescient-recipe" ''
+    (prescient :files ("prescient.el" "ivy-prescient.el"))
+  '';
+};
+
 in emacsWithPackages(epkgs:
   # Pinned packages (from unstable):
   (with pkgs; with lib; attrValues pinnedEmacs) ++
@@ -129,5 +146,5 @@ in emacsWithPackages(epkgs:
   ]) ++
 
   # Custom packaged Emacs packages:
-  [ sly sly-company nix-mode eglot pkgs.notmuch ]
+  [ sly sly-company nix-mode eglot prescient pkgs.notmuch ]
 )
