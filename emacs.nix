@@ -134,10 +134,10 @@ in emacsWithPackages(epkgs:
     restclient
     rust-mode
     s
-    smart-mode-line
     smartparens
     string-edit
     terraform-mode
+    telephone-line
     toml-mode
     uuidgen
     web-mode
