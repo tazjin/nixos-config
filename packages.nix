@@ -138,8 +138,6 @@ in {
     hlint
     stack
     stack2nix
-    haskellPackages.intero
     haskellPackages.stylish-haskell
-    haskellPackages.yesod-bin
   ];
 }
