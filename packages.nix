@@ -10,28 +10,22 @@ let
     url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
   }) { config.allowUnfree = true; };
 
-  # Channels last updated: 2014-05-26
+  # Channels last updated: 2018-06-15
 
   # Instead of relying on Nix channels and ending up with out-of-sync
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "2f6440eb09b7e6e3322720ac91ce7e2cdeb413f9";
-    sha256 = "0vb7ikjscrp2rw0dfw6pilxqpjm50l5qg2x2mn1vfh93dkl2aan7";
+    rev    = "08d245eb31a3de0ad73719372190ce84c1bf3aee";
+    sha256 = "1g22f8r3l03753s67faja1r0dq0w88723kkfagskzg9xy3qs8yw8";
   };
 
   # Certain packages from unstable are hand-picked into the package
   # set.
   unstable = fetchChannel {
-    rev    = "5da85431fb1df4fb3ac36730b2591ccc9bdf5c21";
-    sha256 = "0pc15wh5al9dmhcj29gwqir3wzpyk2nrplibr5xjk2bdvw6sv6c1";
+    rev    = "4b649a99d8461c980e7028a693387dc48033c1f7";
+    sha256 = "0iy2gllj457052wkp20baigb2bnal9nhyai0z9hvjr3x25ngck4y";
   };
-
-  # Temporarily import a commit from master directly to pick emacs26.
-  # Should be removed once that update is in nixos-unstable.
-  master = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/288ce0cb845c03fafa1f3c673440e9922f22131a.tar.gz";
-  }) {};
 in {
   # Configure the Nix package manager
   nixpkgs = {
@@ -44,7 +38,6 @@ in {
 
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
-      emacs = master.emacs;
 
       # Override various Emacs packages from unstable:
       pinnedEmacs = with unstable.emacsPackagesNg; {
@@ -60,6 +53,7 @@ in {
           markdown-toc
           swiper;
       };
+      emacs = unstable.emacs; # emacs 26.1
     };
   };
 
