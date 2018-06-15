@@ -33,26 +33,15 @@ in {
     # To use the pinned channel, the original package set is thrown
     # away in the overrides:
     config.packageOverrides = oldPkgs: stable // {
+      # Store whole unstable channel in case that other modules need
+      # it (see emacs.nix for example):
+      inherit unstable;
+
       wallpapers = import ./pkgs/wallpapers.nix;
       pulseaudio-ctl = import pkgs/pulseaudio-ctl.nix;
 
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
-
-      # Override various Emacs packages from unstable:
-      pinnedEmacs = with unstable.emacsPackagesNg; {
-        inherit
-          counsel
-          counsel-tramp
-          exwm
-          ivy
-          ivy-gitlab
-          ivy-hydra
-          ivy-pass
-          markdown-mode
-          markdown-toc
-          swiper;
-      };
       emacs = unstable.emacs; # emacs 26.1
     };
   };
