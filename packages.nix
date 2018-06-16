@@ -43,6 +43,7 @@ in {
       kontemplate = unstable.kontemplate;
       mq-cli = unstable.mq-cli;
       emacs = unstable.emacs; # emacs 26.1
+      vlc = unstable.vlc; # VLC 3.0!
     };
   };
 
