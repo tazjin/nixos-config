@@ -39,6 +39,46 @@ eglot = emacsPackagesNg.melpaBuild rec {
   };
 };
 
+# ivy has not been updated in unstable for a while:
+ivySource = fetchFromGitHub {
+  owner  = "abo-abo";
+  repo   = "swiper";
+  rev    = "6f2939485d33e9b28022d3b6912a50669dcdd596";
+  sha256 = "1f2i6hkcbiqdw7fr9vabsm32a0gy647llzki6b97yv8vwa0klh2q";
+};
+
+withIvySources = pname: recipe: emacsPackagesNg.melpaBuild {
+  inherit pname;
+  version = "20180616";
+  recipeFile = builtins.toFile "${pname}-recipe" recipe;
+  src = ivySource;
+};
+
+newIvy.ivy = withIvySources "ivy" ''
+(ivy :files (:defaults
+             (:exclude "swiper.el" "counsel.el" "ivy-hydra.el")
+             "doc/ivy-help.org"))
+'';
+
+newIvy.counsel = withIvySources "counsel" ''
+(counsel :files ("counsel.el"))
+'';
+
+newIvy.swiper = withIvySources "swiper" ''
+(swiper :files ("swiper.el"))
+'';
+
+newIvy.ivy-pass = melpaBuild {
+  pname = "ivy-pass";
+  version = "20170812";
+  src = fetchFromGitHub {
+    owner  = "ecraven";
+    repo   = "ivy-pass";
+    rev    = "5b523de1151f2109fdd6a8114d0af12eef83d3c5";
+    sha256 = "18crb4zh2pjf0cmv3b913m9vfng27girjwfqc3mk7vqd1r5a49yk";
+  };
+};
+
 # prescient & ivy-prescient provide better filtering in ivy/counsel,
 # but they are not in nixpkgs yet:
 prescientSource = fetchFromGitHub {
@@ -62,7 +102,7 @@ ivy-prescient = emacsPackagesNg.melpaBuild {
   pname   = "ivy-prescient";
   version = "1.0";
   src     = prescientSource;
-  packageRequires = [ prescient ivy ];
+  packageRequires = [ prescient newIvy.ivy ];
 
   recipeFile = writeText "ivy-prescient-recipe" ''
     (ivy-prescient :files ("ivy-prescient.el"))
@@ -86,8 +126,6 @@ in emacsWithPackages(epkgs:
   (with epkgs.melpaPackages; [
     browse-kill-ring
     cargo
-    counsel
-    counsel-tramp
     dash
     dash-functional
     dockerfile-mode
@@ -99,8 +137,6 @@ in emacsWithPackages(epkgs:
     haskell-mode
     ht
     idle-highlight-mode
-    ivy
-    ivy-pass
     jq-mode
     kotlin-mode
     magit
@@ -118,7 +154,6 @@ in emacsWithPackages(epkgs:
     s
     smartparens
     string-edit
-    swiper
     telephone-line
     terraform-mode
     toml-mode
@@ -127,6 +162,9 @@ in emacsWithPackages(epkgs:
     websocket
     yaml-mode
   ]) ++
+
+  # Use custom updated ivy packages
+  (lib.attrValues newIvy) ++
 
   # Custom packaged Emacs packages:
   [ nix-mode eglot prescient ivy-prescient pkgs.notmuch ]
