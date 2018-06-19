@@ -136,6 +136,7 @@ in emacsWithPackages(epkgs:
     gruber-darker-theme
     haskell-mode
     ht
+    hydra
     idle-highlight-mode
     jq-mode
     kotlin-mode
