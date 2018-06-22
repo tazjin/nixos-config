@@ -158,6 +158,7 @@ in emacsWithPackages(epkgs:
     telephone-line
     terraform-mode
     toml-mode
+    use-package
     uuidgen
     web-mode
     websocket
