@@ -40,6 +40,10 @@
         psk = "wurst2015";
       };
 
+      "postkontoret" = {
+        psk = "postkontoret";
+      };
+
       # Eugene's apartment:
       "GET_5G_4FD250" = {
         psk = "62636342";
@@ -62,6 +66,10 @@
       "DubGjest" = {
         # of course
         psk = "Guinness";
+      };
+
+      "MAGNAT Guest" = {
+        psk = "elmolino021";
       };
 
       # Sync Compound
