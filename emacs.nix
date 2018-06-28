@@ -109,6 +109,25 @@ ivy-prescient = emacsPackagesNg.melpaBuild {
   '';
 };
 
+sly = emacsPackagesNg.melpaBuild {
+  pname           = "sly";
+  version         = "20180613";
+  packageRequires = [ elpaPackages.company ];
+
+  src = fetchFromGitHub {
+    owner  = "joaotavora";
+    repo   = "sly";
+    rev    = "a05b45f1564a86a9d49707c9c570da6c3a56b6e5";
+    sha256 = "1c9xzppxlnak1px0dv0ljpp4izfj4377lncvrcb1jaiyh8z8ry48";
+  };
+
+  recipeFile = writeText "sly-recipe" ''
+    (sly :files ("*.el"
+                 ("lib" "lib/*")
+                 ("contrib" "contrib/*")))
+  '';
+};
+
 in emacsWithPackages(epkgs:
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
@@ -169,5 +188,5 @@ in emacsWithPackages(epkgs:
   (lib.attrValues newIvy) ++
 
   # Custom packaged Emacs packages:
-  [ nix-mode eglot prescient ivy-prescient pkgs.notmuch ]
+  [ nix-mode eglot prescient ivy-prescient pkgs.notmuch sly ]
 )
