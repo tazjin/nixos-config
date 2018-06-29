@@ -79,6 +79,23 @@ newIvy.ivy-pass = melpaBuild {
   };
 };
 
+counsel-notmuch = melpaBuild {
+  pname   = "counsel-notmuch";
+  version = "20171223";
+
+  packageRequires = [
+    newIvy.ivy
+    pkgs.notmuch
+  ];
+
+  src = fetchFromGitHub {
+    owner  = "fuxialexander";
+    repo   = "counsel-notmuch";
+    rev    = "ac1aaead81c6860d7b8324cc1c00bcd52de5e9ca";
+    sha256 = "19frcrz6bx7d7v1hkg0xv7zmbk2sydlsdzn1s96cqzjk1illchkz";
+  };
+};
+
 # prescient & ivy-prescient provide better filtering in ivy/counsel,
 # but they are not in nixpkgs yet:
 prescientSource = fetchFromGitHub {
@@ -188,5 +205,5 @@ in emacsWithPackages(epkgs:
   (lib.attrValues newIvy) ++
 
   # Custom packaged Emacs packages:
-  [ nix-mode eglot prescient ivy-prescient pkgs.notmuch sly ]
+  [ nix-mode eglot prescient ivy-prescient counsel-notmuch pkgs.notmuch sly ]
 )
