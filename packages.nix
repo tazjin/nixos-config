@@ -63,8 +63,6 @@ in {
     fish
     gcc
     git
-    gnome3.dconf
-    gnome3.glib_networking
     gnumake
     gnupg
     google-cloud-sdk
@@ -84,7 +82,6 @@ in {
     msmtp
     mq-cli
     ngrok
-    nixops
     notmuch
     numix-cursor-theme
     numix-gtk-theme
@@ -98,7 +95,6 @@ in {
     pkgconfig
     pulseaudio-ctl
     pwgen
-    qjackctl
     ripgrep
     rustup
     sbcl
@@ -109,7 +105,6 @@ in {
     systemd.dev
     tdesktop
     terraform
-    thinkfan
     tig
     tmux
     tokei
