@@ -26,6 +26,13 @@ let
     rev    = "4b649a99d8461c980e7028a693387dc48033c1f7";
     sha256 = "0iy2gllj457052wkp20baigb2bnal9nhyai0z9hvjr3x25ngck4y";
   };
+
+  # Haskell IDE engine:
+  hieCommit = "8f04568aa8c3215f543250eb7a1acfa0cf2d24ed";
+  hie = import (fetchTarball {
+    url    = "https://github.com/domenkozar/hie-nix/archive/${hieCommit}.tar.gz";
+    sha256 = "06ygnywfnp6da0mcy4hq0xcvaaap1w3di2midv1w9b9miam8hdrn";
+  }) {};
 in {
   # Configure the Nix package manager
   nixpkgs = {
@@ -119,9 +126,11 @@ in {
     # Haskell packages:
     cabal-install
     ghc
+    hie.hie82
     hlint
     stack
     stack2nix
     haskellPackages.stylish-haskell
+    haskellPackages.yesod-bin
   ];
 }
