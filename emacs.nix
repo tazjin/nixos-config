@@ -160,6 +160,7 @@ in emacsWithPackages(epkgs:
 
   # MELPA packages:
   (with epkgs.melpaPackages; [
+    alchemist
     browse-kill-ring
     cargo
     dash
