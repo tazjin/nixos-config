@@ -167,6 +167,7 @@ in emacsWithPackages(epkgs:
     dash-functional
     dockerfile-mode
     edit-server
+    elixir-mode
     erlang
     exwm
     go-mode
