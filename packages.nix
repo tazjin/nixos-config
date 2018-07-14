@@ -75,6 +75,7 @@ in {
     google-cloud-sdk
     gopass
     htop
+    hicolor-icon-theme
     i3lock
     iftop
     # Upstream link is down:
