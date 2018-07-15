@@ -79,6 +79,7 @@
   };
 
   services.postgresql.enable = true;
+  services.redis.enable = true;
 
   # Configure user account
   users.defaultUserShell = pkgs.fish;
