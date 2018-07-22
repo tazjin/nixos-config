@@ -44,6 +44,7 @@ in {
   # Configure fonts
   fonts = {
     fonts = with pkgs; [
+      corefonts
       font-awesome-ttf
       input-fonts
       noto-fonts-cjk
