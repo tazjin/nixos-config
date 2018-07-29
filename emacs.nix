@@ -29,13 +29,13 @@ nix-mode = emacsPackagesNg.melpaBuild {
 # `eglot` instead and hope for the best.
 eglot = emacsPackagesNg.melpaBuild rec {
   pname = "eglot";
-  version = "0.8";
+  version = "1.1";
 
   src = fetchFromGitHub {
     owner  = "joaotavora";
     repo   = "eglot";
     rev    = version;
-    sha256 = "1avsry84sp3s2vr2iz9dphm579xgw8pqlwffl75gn5akykgazwdx";
+    sha256 = "0p3fry60xvh7za0p8pyz4h21nzj6df1cbl9lxdzd19rwfd35fzpp";
   };
 };
 
