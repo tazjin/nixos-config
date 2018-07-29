@@ -25,18 +25,26 @@ nix-mode = emacsPackagesNg.melpaBuild {
   '';
 };
 
-# The default Rust language server mode is not really usable, install
-# `eglot` instead and hope for the best.
+jsonrpc = emacsPackagesNg.elpaBuild rec {
+  pname   = "jsonrpc";
+  version = "1.0.0";
+
+  src = fetchurl {
+    url    = "https://elpa.gnu.org/packages/jsonrpc-${version}.el";
+    sha256 = "06lmmn7j2ilkvwibbpgnd8p6d63fjjnxd2ma8f4jw6vrz1f7lwvs";
+  };
+};
+
 eglot = emacsPackagesNg.melpaBuild rec {
   pname = "eglot";
   version = "1.1";
 
-  src = fetchFromGitHub {
-    owner  = "joaotavora";
-    repo   = "eglot";
-    rev    = version;
-    sha256 = "0p3fry60xvh7za0p8pyz4h21nzj6df1cbl9lxdzd19rwfd35fzpp";
+  src = fetchurl {
+    url    = "https://elpa.gnu.org/packages/eglot-${version}.tar";
+    sha256 = "01h4wh87lrd9l50y20gjjkgg760v8ixvbcb3q8jykl29989zw62y";
   };
+
+  packageRequires = [ jsonrpc ];
 };
 
 # ivy has not been updated in unstable for a while:
