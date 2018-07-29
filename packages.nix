@@ -53,6 +53,20 @@ in {
     };
   };
 
+  # Configure additional binary caches (via Cachix)
+  nix = {
+    binaryCaches = [
+      # hie-nix contains the Haskell IDE Engine packaged for NixOS
+      "https://hie-nix.cachix.org"
+    ];
+
+    binaryCachePublicKeys = [
+      "hie-nix.cachix.org-1:EjBSHzF6VmDnzqlldGXbi0RM3HdjfTU3yDRi9Pd0jTY="
+    ];
+
+    trustedUsers = [ "root" "vincent" ];
+  };
+
   # ... and declare packages to be installed.
   environment.systemPackages = with pkgs; [
     # Default nixos.* packages:
