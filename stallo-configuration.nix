@@ -7,6 +7,10 @@
   # Use proprietary nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # Enable 32-bit compatibility for Steam:
+  hardware.opengl.driSupport32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
+
   networking = {
     hostName = "stallo";
     wireless.enable = true;
