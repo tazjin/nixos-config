@@ -10,21 +10,21 @@ let
     url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
   }) { config.allowUnfree = true; };
 
-  # Channels last updated: 2018-06-15
+  # Channels last updated: 2018-07-29
 
   # Instead of relying on Nix channels and ending up with out-of-sync
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "08d245eb31a3de0ad73719372190ce84c1bf3aee";
-    sha256 = "1g22f8r3l03753s67faja1r0dq0w88723kkfagskzg9xy3qs8yw8";
+    rev    = "d6c6c7fcec6dbd2b8ab14f0b35d56c7733872baa";
+    sha256 = "1bq59575b58lmh5w8bh7pwp17c3p2nm651bz1i3q224c4zsj9294";
   };
 
   # Certain packages from unstable are hand-picked into the package
   # set.
   unstable = fetchChannel {
-    rev    = "4b649a99d8461c980e7028a693387dc48033c1f7";
-    sha256 = "0iy2gllj457052wkp20baigb2bnal9nhyai0z9hvjr3x25ngck4y";
+    rev    = "dae9cf6106da19f79a39714f183ed253c62b32c5";
+    sha256 = "0r3c00m96ldb9z81ay7vj8gnpk4bf8gjcdiad7mgxvwxr9ndskjx";
   };
 
   # Haskell IDE engine:
