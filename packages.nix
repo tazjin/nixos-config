@@ -137,6 +137,7 @@ in {
     vlc
     xclip
     xfce.xfce4-screenshooter
+    extremetuxracer
 
     # Haskell packages:
     cabal-install
