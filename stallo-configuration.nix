@@ -1,5 +1,5 @@
 # Local configuration for 'stallo' (Home desktop PC)
-{ config, ...}:
+{ config, pkgs, ...}:
 
 {
   boot.initrd.luks.devices.stallo-luks.device = "/dev/disk/by-uuid/b484cf1e-a27b-4785-8bd6-fa85a004b073";
@@ -10,6 +10,9 @@
   # Enable 32-bit compatibility for Steam:
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
+
+  # Wine for Blizzard stuff
+  environment.systemPackages = with pkgs.unstable; [ wineStaging winetricks ];
 
   networking = {
     hostName = "stallo";
