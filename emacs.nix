@@ -153,6 +153,19 @@ sly = emacsPackagesNg.melpaBuild {
   '';
 };
 
+# EXWM pinned to a newer version than what is released due to a
+# potential fix for ch11ng/exwm#425.
+exwm = emacsPackagesNg.exwm.overrideAttrs(_: {
+  version = "master";
+
+  src = fetchFromGitHub {
+    owner  = "ch11ng";
+    repo   = "exwm";
+    rev    = "aebcb0344f18b1aa284a432811175fde2d2feae5";
+    sha256 = "0niwbzim029lg71y5rrg607zfiw1zmhk7zcyk5874gbrkfmyr52b";
+ };
+});
+
 in emacsWithPackages(epkgs:
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
@@ -177,7 +190,6 @@ in emacsWithPackages(epkgs:
     edit-server
     elixir-mode
     erlang
-    exwm
     go-mode
     gruber-darker-theme
     haskell-mode
@@ -215,5 +227,5 @@ in emacsWithPackages(epkgs:
   (lib.attrValues newIvy) ++
 
   # Custom packaged Emacs packages:
-  [ nix-mode eglot prescient ivy-prescient counsel-notmuch pkgs.notmuch sly ]
+  [ nix-mode eglot prescient ivy-prescient counsel-notmuch pkgs.notmuch sly exwm ]
 )
