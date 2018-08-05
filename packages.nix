@@ -26,13 +26,6 @@ let
     rev    = "dae9cf6106da19f79a39714f183ed253c62b32c5";
     sha256 = "0r3c00m96ldb9z81ay7vj8gnpk4bf8gjcdiad7mgxvwxr9ndskjx";
   };
-
-  # Haskell IDE engine:
-  hieCommit = "8f04568aa8c3215f543250eb7a1acfa0cf2d24ed";
-  hie = import (fetchTarball {
-    url    = "https://github.com/domenkozar/hie-nix/archive/${hieCommit}.tar.gz";
-    sha256 = "06ygnywfnp6da0mcy4hq0xcvaaap1w3di2midv1w9b9miam8hdrn";
-  }) {};
 in {
   # Configure the Nix package manager
   nixpkgs = {
@@ -80,6 +73,7 @@ in {
     iftop
     # Upstream link is down:
     # jetbrains.idea-ultimate
+    extremetuxracer
     jq
     kontemplate
     kubernetes
@@ -87,8 +81,8 @@ in {
     lxappearance-gtk3
     manpages
     maven
-    msmtp
     mq-cli
+    msmtp
     ngrok
     notmuch
     numix-cursor-theme
@@ -123,12 +117,10 @@ in {
     vlc
     xclip
     xfce.xfce4-screenshooter
-    extremetuxracer
 
     # Haskell packages:
     cabal-install
     ghc
-    hie.hie82
     hlint
     stack
     stack2nix
