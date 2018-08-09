@@ -12,7 +12,7 @@
   hardware.pulseaudio.support32Bit = true;
 
   # Wine for Blizzard stuff
-  environment.systemPackages = with pkgs.unstable; [ wineStaging winetricks ];
+  environment.systemPackages = with pkgs.unstable; [ wineWowPackages.staging winetricks ];
 
   networking = {
     hostName = "stallo";
