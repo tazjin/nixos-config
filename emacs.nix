@@ -1,6 +1,5 @@
 # Derivation for Emacs pre-configured with packages that I need.
-#
-# * TODO 2018-06-15: sly removed due to build error in unstable
+
 { pkgs }:
 
 with pkgs.unstable; with emacsPackagesNg;
@@ -221,6 +220,11 @@ in emacsWithPackages(epkgs:
     web-mode
     websocket
     yaml-mode
+  ]) ++
+
+  # Stable packages
+  (with epkgs.melpaStablePackages; [
+    intero
   ]) ++
 
   # Use custom updated ivy packages
