@@ -13,6 +13,15 @@
   services.avahi.enable     = true;
   services.avahi.nssmdns    = true;
 
+  # Yubikey related:
+  services.pcscd.enable = true;
+  environment.systemPackages = with pkgs; [
+    cfssl
+    libp11
+    opensc
+    yubico-piv-tool
+  ];
+
   networking = {
     hostName = "adho";
     wireless.enable = true;
