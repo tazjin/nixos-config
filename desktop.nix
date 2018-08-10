@@ -10,7 +10,7 @@ in {
   # Configure basic X-server stuff:
   services.xserver = {
     enable = true;
-    layout = "us,no,ru";
+    layout = "us,no";
     xkbOptions = "caps:super, grp:shifts_toggle, parens:swap_brackets";
     exportConfiguration = true;
 
