@@ -157,11 +157,13 @@ sly = emacsPackagesNg.melpaBuild {
 exwm = emacsPackagesNg.exwm.overrideAttrs(_: {
   version = "master";
 
+  # This is not the original upstream repo, see PR:
+  # https://github.com/ch11ng/exwm/pull/469/
   src = fetchFromGitHub {
-    owner  = "ch11ng";
+    owner  = "medranocalvo";
     repo   = "exwm";
-    rev    = "aebcb0344f18b1aa284a432811175fde2d2feae5";
-    sha256 = "0niwbzim029lg71y5rrg607zfiw1zmhk7zcyk5874gbrkfmyr52b";
+    rev    = "4c67a459c9f3d929e04a6b6ade452b203171e35b";
+    sha256 = "0ia977m3wjkiccslbb3xf0m0bjmhys4c37j1prldi0rizrsf18r9";
  };
 });
 
