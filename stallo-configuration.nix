@@ -18,8 +18,15 @@
     hostName = "stallo";
     wireless.enable = true;
     wireless.networks = {
+      # Welcome to roast club!
+
       "How do I computer fast?" = {
-        # Welcome to roast club!
+        psk = "washyourface";
+        # Prefer 5Ghz unless the card is acting up.
+        priority = 10;
+      };
+
+      "How do I computer?" = {
         psk = "washyourface";
       };
     };
