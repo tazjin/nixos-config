@@ -131,6 +131,10 @@
       "WIFIonICE" = {};
       "Lorry Gjest" = {};
       "Amundsengjest" = {};
+      "Beer Palace Gjest" = {};
+      "KabelBox-2FD0" = {
+        psk = "92433048597489095671";
+      };
     };
   };
 
