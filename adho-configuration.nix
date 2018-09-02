@@ -13,6 +13,9 @@
   services.avahi.enable     = true;
   services.avahi.nssmdns    = true;
 
+  # Give me more entropy:
+  services.haveged.enable = true;
+
   # Yubikey related:
   services.pcscd.enable = true;
   environment.systemPackages = with pkgs; [
