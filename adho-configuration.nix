@@ -98,6 +98,11 @@
         psk = "DQDxzrzIvy0YtDwH";
       };
 
+      # Loke's
+      "VMC28F76E" = {
+        psk = "d2ftQnr6xppw";
+      };
+
       "SafetyWiFi - Teknologihuset" = {
         psk = "tech4ever";
       };
@@ -118,6 +123,10 @@
       # Røverstaden
       "Roverstaden" = {
         psk = "r0verstaden2018";
+      };
+
+      "The Brew Dock" = {
+        psk = "realbeer";
       };
 
       "Norwegian Internet Access" = {};
