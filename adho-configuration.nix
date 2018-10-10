@@ -3,6 +3,8 @@
 
 {
   boot.initrd.luks.devices.adho.device = "/dev/disk/by-uuid/722006b0-9654-4ea1-8703-e0cf9ac1905e";
+  boot.kernelModules = [ "kvm-intel" ];
+
   services.xserver.libinput.enable = true;
   services.xserver.videoDrivers = [ "intel" ];
   programs.light.enable = true;
