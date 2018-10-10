@@ -120,6 +120,10 @@
         psk = "guest7890";
       };
 
+      "Homan-Gjest" = {
+        psk = "haveaniceday";
+      };
+
       # Røverstaden
       "Roverstaden" = {
         psk = "r0verstaden2018";
