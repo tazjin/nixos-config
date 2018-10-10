@@ -18,6 +18,9 @@
   # Give me more entropy:
   services.haveged.enable = true;
 
+  # Disable sandbox to let work-builds function:
+  nix.useSandbox = false;
+
   # Yubikey related:
   services.pcscd.enable = true;
   environment.systemPackages = with pkgs; [
