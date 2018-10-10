@@ -47,6 +47,7 @@ in {
     # Default nixos.* packages:
     alacritty
     binutils-unwrapped
+    chromium
     curl
     direnv
     dnsutils
