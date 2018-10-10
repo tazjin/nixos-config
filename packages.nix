@@ -10,21 +10,21 @@ let
     url = "https://github.com/NixOS/nixpkgs-channels/archive/${rev}.tar.gz";
   }) { config.allowUnfree = true; };
 
-  # Channels last updated: 2018-07-29
-
+  # Channels last updated: 2018-10-10
+  #
   # Instead of relying on Nix channels and ending up with out-of-sync
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "d6c6c7fcec6dbd2b8ab14f0b35d56c7733872baa";
-    sha256 = "1bq59575b58lmh5w8bh7pwp17c3p2nm651bz1i3q224c4zsj9294";
+    rev    = "59fe4c7f17a8efd9fe182bb23f47554d4b1d98c2";
+    sha256 = "1g72vxax29s0yyknficbwwwrk4h7z8cm6vaxyh5524cljhcdq246";
   };
 
   # Certain packages from unstable are hand-picked into the package
   # set.
   unstable = fetchChannel {
-    rev    = "dae9cf6106da19f79a39714f183ed253c62b32c5";
-    sha256 = "0r3c00m96ldb9z81ay7vj8gnpk4bf8gjcdiad7mgxvwxr9ndskjx";
+    rev    = "0a7e258012b60cbe530a756f09a4f2516786d370";
+    sha256 = "1g72vxax29s0yyknficbwwwrk4h7z8cm6vaxyh5524cljhcdq246";
   };
 in {
   # Configure the Nix package manager
@@ -39,10 +39,6 @@ in {
 
       wallpapers = import ./pkgs/wallpapers.nix;
       pulseaudio-ctl = import pkgs/pulseaudio-ctl.nix;
-
-      kontemplate = unstable.kontemplate;
-      mq-cli = unstable.mq-cli;
-      vlc = unstable.vlc; # VLC 3.0!
     };
   };
 
