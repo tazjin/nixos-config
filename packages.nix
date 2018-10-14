@@ -16,15 +16,15 @@ let
   # situations between machines, the commit for the stable Nix channel
   # is pinned here.
   stable = fetchChannel {
-    rev    = "59fe4c7f17a8efd9fe182bb23f47554d4b1d98c2";
-    sha256 = "1g72vxax29s0yyknficbwwwrk4h7z8cm6vaxyh5524cljhcdq246";
+    rev    = "d96c7a356383302db4426a0d5a8383af921d964f";
+    sha256 = "0hlhczh3m077rwrhp4smf3zd2sfj38h2c126bycv66m0aff0gycn";
   };
 
   # Certain packages from unstable are hand-picked into the package
   # set.
   unstable = fetchChannel {
-    rev    = "0a7e258012b60cbe530a756f09a4f2516786d370";
-    sha256 = "1g72vxax29s0yyknficbwwwrk4h7z8cm6vaxyh5524cljhcdq246";
+    rev    = "32bcd72bf28a971c9063a9cdcc32effe49f49331";
+    sha256 = "1f74m18r6xl9s55jbkj9bjhdxg2489kwjam4d96pf9rzq0i1f8li";
   };
 in {
   # Configure the Nix package manager
