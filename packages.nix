@@ -37,6 +37,12 @@ in {
       # it (see emacs.nix for example):
       inherit unstable;
 
+      # Backport Exa from unstable until a fix for the Rust builder is
+      # backported.
+      #
+      # https://github.com/NixOS/nixpkgs/pull/48020
+      exa = unstable.exa;
+
       wallpapers = import ./pkgs/wallpapers.nix;
       pulseaudio-ctl = import pkgs/pulseaudio-ctl.nix;
     };
@@ -53,6 +59,7 @@ in {
     dnsutils
     evince
     exa
+    extremetuxracer
     fd
     file
     firefox-unwrapped
@@ -63,13 +70,10 @@ in {
     gnupg
     google-cloud-sdk
     gopass
-    htop
     hicolor-icon-theme
+    htop
     i3lock
     iftop
-    # Upstream link is down:
-    # jetbrains.idea-ultimate
-    extremetuxracer
     jq
     kontemplate
     kubernetes
