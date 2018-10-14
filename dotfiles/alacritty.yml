@@ -197,3 +197,7 @@ hide_cursor_when_typing: false
 
 # Live config reload (changes require restart)
 live_config_reload: true
+
+# Disable visual bell
+visual_bell:
+  duration: 0
