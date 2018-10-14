@@ -91,6 +91,7 @@ in emacsWithPackages(epkgs:
     magit
     markdown-mode
     markdown-toc
+    meghanada
     multi-term
     multiple-cursors
     nginx-mode
