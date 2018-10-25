@@ -89,11 +89,6 @@
         psk = "elmolino021";
       };
 
-      # Sync Compound
-      "RWDS" = {
-        psk = "radicalagenda";
-      };
-
       "BrewDog" = {
         psk = "welovebeer";
       };
@@ -138,6 +133,20 @@
         psk = "realbeer";
       };
 
+      "econ-guest" = {
+        psk = "Finance2010";
+      };
+
+      "KabelBox-2FD0" = {
+        psk = "92433048597489095671";
+      };
+
+      # NixCon 2018
+      "Coin Street Community Builders " = {
+        psk = "3vents2016";
+      };
+
+      "mycloud" = {};
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
       "The Thief" = {};
@@ -150,9 +159,7 @@
       "Lorry Gjest" = {};
       "Amundsengjest" = {};
       "Beer Palace Gjest" = {};
-      "KabelBox-2FD0" = {
-        psk = "92433048597489095671";
-      };
+      "ibis" = {};
     };
   };
 
