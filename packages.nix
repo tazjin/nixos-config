@@ -57,6 +57,7 @@ in {
     curl
     direnv
     dnsutils
+    dotnet-sdk
     evince
     exa
     extremetuxracer
@@ -81,6 +82,7 @@ in {
     lxappearance-gtk3
     manpages
     maven
+    mono
     mq-cli
     msmtp
     ngrok
@@ -115,6 +117,8 @@ in {
     units
     unzip
     vlc
+    wine
+    winetricks
     xclip
     xfce.xfce4-screenshooter
 

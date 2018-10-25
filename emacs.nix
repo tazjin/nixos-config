@@ -96,6 +96,7 @@ in emacsWithPackages(epkgs:
     multiple-cursors
     nginx-mode
     nix-mode
+    omnisharp
     paredit
     password-store
     pg
