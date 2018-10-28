@@ -146,6 +146,7 @@
         psk = "3vents2016";
       };
 
+      "Gatwick FREE Wi-Fi" = {};
       "mycloud" = {};
       "Norwegian Internet Access" = {};
       "NSB_INTERAKTIV" = {};
