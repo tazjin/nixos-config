@@ -16,6 +16,9 @@ in {
 
     # Give EXWM permission to control the session.
     displayManager.sessionCommands = "${pkgs.xorg.xhost}/bin/xhost +SI:localuser:$USER";
+
+    # Use the pre 18.09 default display manager (slim)
+    displayManager.slim.enable = true;
   };
 
   # Add a shell script with random screen lock wallpaper selection
