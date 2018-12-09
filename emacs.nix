@@ -49,6 +49,19 @@ exwm = melpaBuild {
  };
 };
 
+slyFixed = sly.overrideAttrs(_: {
+  recipe = builtins.toFile "recipe" ''
+(sly :repo "joaotavora/sly"
+     :fetcher github
+     :files ("*.el"
+             ("lib" "lib/*")
+             ("contrib" "contrib/*")
+             "doc/*.texi"
+             "doc/*.info"
+             "doc/dir"))
+'';
+});
+
 in emacsWithPackages(epkgs:
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
@@ -106,7 +119,7 @@ in emacsWithPackages(epkgs:
     restclient
     rust-mode
     s
-    # sly
+    slyFixed
     smartparens
     string-edit
     swiper
