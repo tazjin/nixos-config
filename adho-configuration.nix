@@ -141,6 +141,10 @@
         psk = "92433048597489095671";
       };
 
+      "TheKasbah" = {
+        psk = "couscous";
+      };
+
       # NixCon 2018
       "Coin Street Community Builders " = {
         psk = "3vents2016";
@@ -161,6 +165,7 @@
       "Amundsengjest" = {};
       "Beer Palace Gjest" = {};
       "ibis" = {};
+      "GoogleGuest" = {};
     };
   };
 
