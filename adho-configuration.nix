@@ -15,6 +15,13 @@
   services.avahi.enable     = true;
   services.avahi.nssmdns    = true;
 
+  # Enable VirtualBox to update Beatstep Pro firmware:
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  # Enable LXC/LXD for Nixini work
+  virtualisation.lxd.enable = true;
+
   # Give me more entropy:
   services.haveged.enable = true;
 
