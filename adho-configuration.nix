@@ -10,17 +10,17 @@
   programs.light.enable = true;
 
   # Office printer configuration
-  services.printing.enable  = true;
+  services.printing.enable  = false;
   services.printing.drivers = [ pkgs.hplip ];
-  services.avahi.enable     = true;
-  services.avahi.nssmdns    = true;
+  services.avahi.enable     = false;
+  services.avahi.nssmdns    = false;
 
   # Enable VirtualBox to update Beatstep Pro firmware:
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host.enable = false;
+  virtualisation.virtualbox.host.enableExtensionPack = false;
 
   # Enable LXC/LXD for Nixini work
-  virtualisation.lxd.enable = true;
+  virtualisation.lxd.enable = false;
 
   # Give me more entropy:
   services.haveged.enable = true;
@@ -29,7 +29,7 @@
   nix.useSandbox = false;
 
   # Yubikey related:
-  services.pcscd.enable = true;
+  services.pcscd.enable = false;
   environment.systemPackages = with pkgs; [
     cfssl
     libp11
@@ -42,6 +42,11 @@
     wireless.enable = true;
     wireless.userControlled.enable = true;
 
+    # Temporary 35C3 config
+    firewall.allowedTCPPorts = [];
+    firewall.allowedUDPPorts = [];
+    firewall.enable = true;
+
     wireless.networks = {
       # Welcome to roast club!
       "How do I computer?" = {
@@ -53,6 +58,18 @@
         psk = "fisk1234";
         # If this network exists, chances are that I want it:
         priority = 10;
+      };
+
+      "35C3" = {
+        auth = ''
+          key_mgmt=WPA-EAP
+          eap=TTLS
+          identity="static"
+          password="types"
+ 	        ca_cert="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+ 	        altsubject_match="DNS:radius.c3noc.net"
+ 	        phase2="auth=PAP"
+        '';
       };
 
       # Public places in Oslo:

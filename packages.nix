@@ -117,8 +117,8 @@ in {
     units
     unzip
     vlc
-    (wineStaging.override { wineBuild = "wine64"; })
-    winetricks
+    # (wineStaging.override { wineBuild = "wine64"; })
+    # winetricks
     xclip
     xfce.xfce4-screenshooter
 

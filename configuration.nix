@@ -35,9 +35,6 @@
       "1.1.1.1"
       "1.0.0.1"
     ];
-
-    # Open Chromecast-related ports & servedir
-    firewall.allowedTCPPorts = [ 3000 5556 5558 ];
   };
 
   # Generate an immutable /etc/resolv.conf from the nameserver settings
