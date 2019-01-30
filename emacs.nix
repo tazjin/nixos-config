@@ -66,7 +66,6 @@ in emacsWithPackages(epkgs:
   # Actual ELPA packages (the enlightened!)
   (with epkgs.elpaPackages; [
     ace-window
-    adjust-parens
     avy
     company
     pinentry
@@ -88,6 +87,7 @@ in emacsWithPackages(epkgs:
     eglot
     elixir-mode
     erlang
+    elm-mode
     exwm
     go-mode
     gruber-darker-theme
