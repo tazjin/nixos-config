@@ -152,6 +152,11 @@
         psk = "couscous";
       };
 
+      # Kitty's misspelled network.
+      "How do I Computer?" = {
+        psk = "herpderpponies";
+      };
+
       # NixCon 2018
       "Coin Street Community Builders " = {
         psk = "3vents2016";
