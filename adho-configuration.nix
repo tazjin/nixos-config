@@ -162,6 +162,15 @@
         psk = "3vents2016";
       };
 
+      "KH2 Gjest" = {
+        psk = "haenfindag";
+      };
+
+      # Forest & Brown
+      "Forest Guest" = {
+        psk = "437B99AC5B";
+      };
+
       "Gatwick FREE Wi-Fi" = {};
       "mycloud" = {};
       "Norwegian Internet Access" = {};
